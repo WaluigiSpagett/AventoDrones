@@ -3,41 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - AVENTO</title>
-    <link rel="icon" href="images/square logo real.png">
-    <link rel="stylesheet" href="original-styles.css">
+    <title>AVENTO - Drone Photography</title>
+    <link rel="icon" href="images/square-logo-real.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="images/square logo real.png" alt="Logo" class="logo-img">
-            </div>
-            <nav class="main-nav">
-                <a href="info.html">Info</a>
-                <a href="projects.html">Projects</a>
-            </nav>
-            <div class="social-nav">
-                <a href="https://instagram.com/aventodrones" target="_blank" aria-label="Instagram">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/square-logo-real.png" alt="Avento Logo" class="nav-logo">
+                <span class="nav-title">AVENTO</span>
+            </a>
+            <div class="nav-menu">
+                <a href="info.html" class="nav-link">Info</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="https://instagram.com/aventodrones" target="_blank" class="nav-social">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                 </a>
             </div>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('images/dji_20240618125441_0009_d_dronepic.jpg');">
-        <div class="hero-overlay"></div>
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('images/dji_20240618125441_0009_d_dronepic.jpg');"></div>
         <div class="hero-content">
-            <h1>AVENTO DRONES PHOTOGRAPHY</h1>
-            <div class="hero-actions">
-                <a href="info.html" class="btn-secondary">
-                    About me
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 0L8.59 1.41L15.17 8H0V10H15.17L8.59 16.59L10 18L20 10L10 0Z"/>
+            <div class="hero-text">
+                <h1 class="hero-title">Avento Drones<br>Photography</h1>
+                <a href="info.html" class="hero-btn">
+                    <span>About me</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 10h10M10 5l5 5-5 5"/>
                     </svg>
                 </a>
             </div>
@@ -45,44 +50,61 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section">
-        <div class="container-wide">
-            <div class="section-header-projects">
-                <h2>PROJECTS</h2>
-                <a href="projects.html" class="link-arrow">See all projects</a>
+    <section class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <a href="projects.html" class="view-all">
+                    See all projects
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 10h10M10 5l5 5-5 5"/>
+                    </svg>
+                </a>
             </div>
 
             <div class="projects-grid">
                 <article class="project-card">
-                    <a href="project-1.html">
-                        <div class="project-image" style="background-image: url('images/promotional photo 1.jpg');"></div>
+                    <a href="project-1.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/promotional photo 1.jpg" alt="Project 1">
+                            <div class="project-overlay">
+                                <span class="project-view">View Project →</span>
+                            </div>
+                        </div>
                         <div class="project-info">
-                            <div class="project-date">October 31, 2022</div>
+                            <time class="project-date">October 31, 2022</time>
                             <h3 class="project-title">Project #1</h3>
-                            <div class="project-client">By Me</div>
-                            <div class="read-more-link">Read more →</div>
+                            <p class="project-client">By Me</p>
                         </div>
                     </a>
                 </article>
 
                 <article class="project-card">
-                    <a href="project-2.html">
-                        <div class="project-image" style="background-image: url('images/drone shot 1-min.jpg');"></div>
+                    <a href="project-2.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/drone shot 1-min.jpg" alt="Project 2">
+                            <div class="project-overlay">
+                                <span class="project-view">View Project →</span>
+                            </div>
+                        </div>
                         <div class="project-info">
-                            <div class="project-date">January 8, 2023</div>
+                            <time class="project-date">January 8, 2023</time>
                             <h3 class="project-title">Project #2</h3>
-                            <div class="read-more-link">Read more →</div>
                         </div>
                     </a>
                 </article>
 
                 <article class="project-card">
-                    <a href="project-3.html">
-                        <div class="project-image" style="background-image: url('images/dji_20240618125958_0020_d_dronepic.jpg');"></div>
+                    <a href="project-3.html" class="project-link">
+                        <div class="project-image">
+                            <img src="images/dji_20240618125958_0020_d_dronepic.jpg" alt="Project 3">
+                            <div class="project-overlay">
+                                <span class="project-view">View Project →</span>
+                            </div>
+                        </div>
                         <div class="project-info">
-                            <div class="project-date">June 18, 2024</div>
+                            <time class="project-date">June 18, 2024</time>
                             <h3 class="project-title">Project #3</h3>
-                            <div class="read-more-link">Read more →</div>
                         </div>
                     </a>
                 </article>
@@ -92,51 +114,64 @@
 
     <!-- Quote Section -->
     <section class="quote-section">
-        <div class="quote-container">
-            <blockquote>
-                <p class="quote-text">View your work from another angle</p>
-            </blockquote>
-            <div class="quote-attribution">
-                <div class="quote-author">— Will</div>
-                <div class="quote-role">Head UAV Photographer at Avento</div>
+        <div class="container-narrow">
+            <div class="quote-card">
+                <svg class="quote-icon" width="48" height="48" viewBox="0 0 48 48" fill="currentColor">
+                    <path d="M12 32c-4.4 0-8-3.6-8-8s3.6-8 8-8c.4 0 .8 0 1.2.1-1-3.8-4.3-6.5-8.2-6.5V6c6.6 0 12 5.4 12 12v8c0 4.4-3.6 8-8 8zm24 0c-4.4 0-8-3.6-8-8s3.6-8 8-8c.4 0 .8 0 1.2.1-1-3.8-4.3-6.5-8.2-6.5V6c6.6 0 12 5.4 12 12v8c0 4.4-3.6 8-8 8z"/>
+                </svg>
+                <blockquote>
+                    <p class="quote-text">View your work from another angle</p>
+                    <footer>
+                        <cite class="quote-author">— Will</cite>
+                        <p class="quote-title">Head UAV Photographer at Avento</p>
+                    </footer>
+                </blockquote>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="text-section">
+    <section class="faq">
         <div class="container-narrow">
-            <h2 class="section-title-center">FAQ</h2>
-        </div>
-    </section>
+            <h2 class="faq-title">FAQ</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-question">How much does it cost?</h3>
+                    <p class="faq-answer">Drone packages start at £100 for a basic photo package, £150 for a photo and video package and £200 for custom branded photo and videos. Email for more information.</p>
+                </div>
 
-    <section class="text-section-alt">
-        <div class="container-wide">
-            <h3 class="text-section-title">How much does it cost?</h3>
-            <p>Drone packages start at £100 for a basic photo package, £150 for a photo and video package and £200 for custom branded photo and videos. Email for more information.</p>
-        </div>
-    </section>
-
-    <section class="text-section-alt">
-        <div class="container-wide">
-            <h3 class="text-section-title">Where can you survey?</h3>
-            <p>Certain restrictions apply to exactly where, but a survey can be done over most residential properties, commercial sites and rural buildings. Please email for more information on your situation.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">Where can you survey?</h3>
+                    <p class="faq-answer">Certain restrictions apply to exactly where, but a survey can be done over most residential properties, commercial sites and rural buildings. Please email for more information on your situation.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>Contact details</h4>
-                    <p>Email: <a href="/cdn-cgi/l/email-protection#bbecd2d7d7d2dad6fbdacdded5cfd4dfc9d4d5dec895d8d495ced0"><span class="__cf_email__" data-cfemail="83d4eaefefeae2eec3e2f5e6edf7ece7f1ecede6f0ade0ecadf6e8">[email&#160;protected]</span></a></p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact details</h4>
+                    <p class="footer-text">Email: <a href="mailto:William@aventodrones.co.uk">William@aventodrones.co.uk</a></p>
                 </div>
-                <div class="footer-column">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
                     <nav class="footer-nav">
                         <a href="info.html">Info</a>
-                        <a href="/cdn-cgi/l/email-protection#9ec9f7f2f2f7fff3deffe8fbf0eaf1faecf1f0fbedb0fdf1b0ebf5">Contact</a>
+                        <a href="mailto:William@aventodrones.co.uk">Contact</a>
                         <a href="privacy-policy.html">Privacy Policy</a>
                     </nav>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="modern-script.js"></script>
+</body>
+</html>
