@@ -274,6 +274,19 @@ body {
 .projects {
     padding: 8rem 0;
     background: var(--light);
+    position: relative;
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('images/DJI_20240618125441_0009_D_DRONEPIC.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.03;
+    pointer-events: none;
 }
 
 .section-header {
@@ -407,11 +420,25 @@ body {
 .quote-section {
     padding: 8rem 0;
     background: var(--cream);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('images/DJI_0770.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    pointer-events: none;
 }
 
 .quote-card {
     position: relative;
-    background: var(--light);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     padding: 4rem 3rem;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
@@ -459,6 +486,19 @@ blockquote {
 .faq {
     padding: 8rem 0;
     background: var(--cream);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('images/DJI_20240618132004_0045_D_DRONEPIC.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    pointer-events: none;
 }
 
 .faq-title {
@@ -468,6 +508,7 @@ blockquote {
     text-align: center;
     margin-bottom: 4rem;
     color: var(--dark);
+    position: relative;
 }
 
 .faq-list {
@@ -477,12 +518,14 @@ blockquote {
 }
 
 .faq-item {
-    background: var(--light);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border-left: 4px solid transparent;
+    position: relative;
 }
 
 .faq-item:hover {
