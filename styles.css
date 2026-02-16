@@ -37,16 +37,20 @@ body {
 
 /* ===== NAVIGATION ===== */
 .navbar {
-    position: sticky;
+    position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
 }
 
 .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: var(--shadow-md);
 }
 
@@ -57,12 +61,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar.scrolled .nav-container {
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -77,14 +87,6 @@ body {
     border-radius: var(--radius-sm);
 }
 
-.nav-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: var(--dark);
-}
-
 .nav-menu {
     display: flex;
     align-items: center;
@@ -94,10 +96,14 @@ body {
 .nav-link {
     font-weight: 500;
     font-size: 0.95rem;
-    color: var(--dark);
+    color: var(--light);
     text-decoration: none;
     position: relative;
     transition: var(--transition);
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--dark);
 }
 
 .nav-link::after {
@@ -123,13 +129,17 @@ body {
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    color: var(--dark);
+    color: var(--light);
     transition: var(--transition);
     border-radius: var(--radius-sm);
 }
 
+.navbar.scrolled .nav-social {
+    color: var(--dark);
+}
+
 .nav-social:hover {
-    background: var(--cream);
+    background: rgba(251, 180, 4, 0.2);
     color: var(--gold);
 }
 
@@ -146,8 +156,12 @@ body {
 .mobile-toggle span {
     width: 24px;
     height: 2px;
-    background: var(--dark);
+    background: var(--light);
     transition: var(--transition);
+}
+
+.navbar.scrolled .mobile-toggle span {
+    background: var(--dark);
 }
 
 /* ===== HERO ===== */

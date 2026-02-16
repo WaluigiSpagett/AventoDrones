@@ -1,0 +1,242 @@
+/* Pages CSS - For Info, Projects, Privacy, etc. */
+
+/* ===== PAGE HERO ===== */
+.page-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    margin-top: 80px;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(5, 8, 6, 0.75) 0%, rgba(5, 8, 6, 0.5) 100%);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.page-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--light);
+    margin-bottom: 1.5rem;
+}
+
+.page-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== PAGE HEADER SIMPLE ===== */
+.page-header-simple {
+    padding: 10rem 0 4rem;
+    background: var(--light);
+    text-align: center;
+}
+
+.page-title-large {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    font-size: 1.25rem;
+    color: var(--gray);
+}
+
+/* ===== CONTENT SECTION ===== */
+.content-section {
+    padding: 5rem 0;
+    background: var(--light);
+}
+
+.info-card {
+    position: relative;
+    background: var(--cream);
+    padding: 3.5rem 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(251, 180, 4, 0.2);
+    text-align: center;
+}
+
+.info-icon {
+    color: var(--gold);
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.info-card p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--dark);
+}
+
+/* ===== CTA SECTIONS ===== */
+.cta-section-full {
+    padding: 5rem 0;
+    background: var(--cream);
+}
+
+.cta-section-full.secondary {
+    background: var(--light);
+}
+
+.cta-card-large {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.cta-card-large h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.cta-card-large p {
+    font-size: 1.25rem;
+    color: var(--gray);
+    margin-bottom: 2.5rem;
+}
+
+.cta-btn-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2.5rem;
+    background: var(--blue);
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-btn-large:hover {
+    background: #0131b8;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cta-btn-large svg {
+    transition: transform 0.3s ease;
+}
+
+.cta-btn-large:hover svg {
+    transform: translateX(4px);
+}
+
+/* ===== PROJECTS FULL PAGE ===== */
+.projects-full {
+    padding: 5rem 0 8rem;
+    background: var(--light);
+}
+
+/* ===== ACTIVE NAV LINK ===== */
+.nav-link.active {
+    color: var(--gold);
+}
+
+.navbar.scrolled .nav-link.active {
+    color: var(--gold);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ===== PRIVACY POLICY ===== */
+.privacy-content {
+    padding: 10rem 0 6rem;
+    background: var(--light);
+}
+
+.privacy-content h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+.privacy-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    margin: 3rem 0 1.5rem;
+    color: var(--dark);
+}
+
+.privacy-content p,
+.privacy-content ul {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.privacy-content ul {
+    padding-left: 2rem;
+}
+
+.privacy-content li {
+    margin-bottom: 0.75rem;
+}
+
+.privacy-content a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.privacy-content a:hover {
+    color: var(--gold);
+}
+
+.privacy-content strong {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 50vh;
+        margin-top: 60px;
+    }
+
+    .page-header-simple {
+        padding: 8rem 0 3rem;
+    }
+
+    .info-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .cta-card-large {
+        padding: 3rem 1.5rem;
+    }
+}
