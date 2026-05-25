@@ -11,7 +11,7 @@ featuredImage:
   caption: ''
   elementId: ''
 addTitleSuffix: true
-colors: colors-a
+colors: colors-b
 backgroundImage:
   type: BackgroundImage
   url: /images/DJI_20240717093235_0011_D_DRONEPIC.jpg

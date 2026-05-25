@@ -1,7 +1,7 @@
 ---
 type: PageLayout
 title: About
-colors: colors-a
+colors: colors-b
 backgroundImage:
   type: BackgroundImage
   url: /images/IMG-20240618-WA0005~8.jpg

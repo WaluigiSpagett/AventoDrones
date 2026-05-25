@@ -1,75 +1,75 @@
 {
     "type": "ThemeStyle",
-    "light": "#ffffff",
-    "onLight": "#050806",
-    "dark": "#000000",
-    "onDark": "#fefefd",
-    "primary": "#fbb404",
-    "onPrimary": "#FBFFF2",
-    "secondary": "#013dd3",
-    "onSecondary": "#050806",
-    "complementary": "#fff9e9",
-    "onComplementary": "#000000",
+    "light": "#f3f2ed",
+    "onLight": "#1a1c1c",
+    "dark": "#1a1c1c",
+    "onDark": "#f3f2ed",
+    "primary": "#735c00",
+    "onPrimary": "#ffffff",
+    "secondary": "#fed65b",
+    "onSecondary": "#1a1c1c",
+    "complementary": "#e6e3da",
+    "onComplementary": "#1a1c1c",
     "fontBody": "fontPrimary",
     "h1": {
         "size": "6xl",
-        "weight": "medium",
+        "weight": "bold",
         "decoration": "none",
-        "case": "uppercase",
-        "letterSpacing": "normal"
+        "case": "none",
+        "letterSpacing": "tight"
     },
     "h2": {
         "size": "5xl",
-        "weight": "normal",
+        "weight": "semibold",
         "decoration": "none",
-        "case": "uppercase",
+        "case": "none",
         "letterSpacing": "normal"
     },
     "h3": {
         "size": "4xl",
-        "weight": "normal",
+        "weight": "semibold",
         "decoration": "none",
-        "case": "uppercase",
+        "case": "none",
         "letterSpacing": "normal"
     },
     "h4": {
         "size": "3xl",
         "weight": "medium",
         "decoration": "none",
-        "case": "uppercase",
+        "case": "none",
         "letterSpacing": "normal"
     },
     "h5": {
         "size": "xl",
         "weight": "medium",
         "decoration": "none",
-        "case": "uppercase",
+        "case": "none",
         "letterSpacing": "normal"
     },
     "h6": {
         "size": "lg",
         "weight": "medium",
         "decoration": "none",
-        "case": "uppercase",
+        "case": "none",
         "letterSpacing": "normal"
     },
     "buttonPrimary": {
-        "weight": "normal",
-        "case": "none",
-        "letterSpacing": "normal",
-        "horizontalPadding": 20,
-        "verticalPadding": 15
+        "weight": "medium",
+        "case": "uppercase",
+        "letterSpacing": "wide",
+        "horizontalPadding": 24,
+        "verticalPadding": 16
     },
     "buttonSecondary": {
-        "weight": "normal",
-        "case": "none",
-        "letterSpacing": "normal",
-        "horizontalPadding": 20,
-        "verticalPadding": 15
+        "weight": "medium",
+        "case": "uppercase",
+        "letterSpacing": "wide",
+        "horizontalPadding": 24,
+        "verticalPadding": 16
     },
     "link": {
-        "weight": "normal",
+        "weight": "medium",
         "case": "uppercase",
-        "letterSpacing": "normal"
+        "letterSpacing": "wide"
     }
 }

@@ -36,3 +36,6 @@ yarn-error.log*
 # IDE
 *.code-workspace
 .idea
+
+# Next.js static export output
+/out/

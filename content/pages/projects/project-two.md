@@ -1,7 +1,7 @@
 ---
 type: ProjectLayout
 title: 'Project #3'
-colors: colors-a
+colors: colors-b
 date: '2024-06-18'
 client: ''
 description: ''

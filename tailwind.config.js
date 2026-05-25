@@ -27,7 +27,11 @@ module.exports = {
                 secondary: themeStyle.secondary,
                 'on-secondary': themeStyle.onSecondary,
                 complementary: themeStyle.complementary,
-                'on-complementary': themeStyle.onComplementary
+                'on-complementary': themeStyle.onComplementary,
+                'outline-variant': '#c5c6ca',
+                'outline-variant-dark': '#353535',
+                'surface-container-low': '#ebe9e0',
+                'surface-container-high': '#e8e8e8'
             },
             spacing: {
                 '1/1': '100%',
@@ -39,8 +43,9 @@ module.exports = {
                 '9/16': '56.25%'
             },
             fontFamily: {
-                fontPrimary: ['DM Mono', 'monospace'],
-                fontSecondary: ['Azeret Mono', 'monospace']
+                fontPrimary: ['Inter', 'sans-serif'],
+                fontSecondary: ['Chivo', 'sans-serif'],
+                fontMonospaced: ['JetBrains Mono', 'monospace']
             },
             letterSpacing: {
                 wide: '.05em',

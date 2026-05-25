@@ -1,7 +1,7 @@
 ---
 type: ProjectFeedLayout
 title: Avento Photography Projects
-colors: colors-a
+colors: colors-b
 backgroundImage:
   type: BackgroundImage
   url: /images/bg1.jpg
@@ -16,7 +16,7 @@ projectFeed:
   showDescription: true
   showReadMoreLink: true
   showFeaturedImage: true
-  variant: variant-a
+  variant: variant-b
   styles:
     self:
       width: narrow

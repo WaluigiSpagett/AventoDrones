@@ -81,40 +81,43 @@ function ProjectsVariantABC(props) {
     }
     return (
         <div
-            className={classNames('grid', 'gap-y-12', {
+            className={classNames('grid', 'gap-8', {
                 'md:grid-cols-2': variant === 'variant-a',
                 'md:grid-cols-3': variant === 'variant-b',
                 'justify-center': variant === 'variant-c',
-                'gap-x-6 lg:gap-x-8': variant === 'variant-a' || 'variant-b',
                 'mt-12': hasTopMargin
             })}
         >
             {projects.map((project, index) => (
                 <Link key={index} href={project} className="sb-project-feed-item block group">
-                    <article className="border-b border-current pb-10 max-w-3xl">
+                    <article className="bg-surface-container-low border border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 flex flex-col h-full overflow-hidden">
                         {showFeaturedImage && project.featuredImage && (
-                            <div className="h-0 w-full mb-6 pt-2/3 relative overflow-hidden">
+                            <div className="h-0 w-full mb-6 pt-2/3 relative overflow-hidden rounded-xl">
                                 <ImageBlock
                                     {...project.featuredImage}
-                                    className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                 />
                             </div>
                         )}
-                        {showDate && project.date && (
-                            <div className="mb-3">
-                                <ProjectDate date={project.date} />
-                            </div>
-                        )}
-                        <h3>{project.title}</h3>
-                        {showDescription && project.description && <p className="text-lg mt-5">{project.description}</p>}
-                        {showReadMoreLink && (
-                            <div className="mt-8">
-                                <span className="sb-component sb-component-block sb-component-button sb-component-button-secondary sb-component-button-icon">
-                                    <span className="sr-only">Read more</span>
-                                    <ArrowUpRightIcon className="fill-current h-5 w-5" />
-                                </span>
-                            </div>
-                        )}
+                        <div className="flex flex-col flex-grow">
+                            {showDate && project.date && (
+                                <div className="mb-3 text-sm font-semibold tracking-wider text-secondary uppercase font-mono">
+                                    <ProjectDate date={project.date} />
+                                </div>
+                            )}
+                            <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                            {showDescription && project.description && <p className="text-base text-on-light/80 mt-3 leading-relaxed line-clamp-3">{project.description}</p>}
+                            {showReadMoreLink && (
+                                <div className="mt-auto pt-6 flex items-center justify-between">
+                                    <span className="text-sm font-semibold uppercase tracking-wider group-hover:underline text-secondary transition-colors duration-300">
+                                        View Project
+                                    </span>
+                                    <span className="inline-flex items-center justify-center h-10 w-10 bg-primary/10 group-hover:bg-primary group-hover:text-white rounded-full transition-all duration-300">
+                                        <ArrowUpRightIcon className="fill-current h-4 w-4" />
+                                    </span>
+                                </div>
+                            )}
+                        </div>
                     </article>
                 </Link>
             ))}

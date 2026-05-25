@@ -4,7 +4,7 @@
     "header": {
         "type": "Header",
         "headerVariant": "variant-c",
-        "isSticky": false,
+        "isSticky": true,
         "title": "AVENTO",
         "isTitleVisible": true,
         "primaryLinks": [
@@ -80,7 +80,7 @@
             "address": "",
             "addressAltText": ""
         },
-        "copyrightText": "Powered by [Netlify](https://www.netlify.com/platform/)",
+        "copyrightText": "© 2024 AVENTO DRONES. ALL RIGHTS RESERVED.",
         "styles": {
             "self": {
                 "width": "narrow",

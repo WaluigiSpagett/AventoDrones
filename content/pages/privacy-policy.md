@@ -151,5 +151,5 @@ sections:
       text:
         textAlign: center
 addTitleSuffix: true
-colors: colors-e
+colors: colors-b
 ---
