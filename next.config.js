@@ -3,6 +3,7 @@
  **/
 const nextConfig = {
   output: 'export',
+  basePath: '/AventoDrones',
   images: {
     unoptimized: true,
   },

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { prefixPath } from '@/utils/prefix-path';
 
 export default function BackgroundImage(props) {
     const { url, className, backgroundSize, backgroundPosition, backgroundRepeat, opacity } = props;
@@ -20,7 +21,7 @@ export default function BackgroundImage(props) {
                 className
             )}
             style={{
-                backgroundImage: `url('${url}')`,
+                backgroundImage: `url('${prefixPath(url)}')`,
                 opacity: (opacity ?? 100) * 0.01
             }}
         />

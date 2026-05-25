@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Annotated } from '@/components/Annotated';
+import { prefixPath } from '@/utils/prefix-path';
 
 export default function ImageBlock(props) {
     const { elementId, className, url, altText = '' } = props;
@@ -13,7 +14,7 @@ export default function ImageBlock(props) {
             <img
                 id={elementId || null}
                 className={classNames('sb-component', 'sb-component-block', 'sb-component-image-block', className)}
-                src={url}
+                src={prefixPath(url)}
                 alt={altText}
             />
         </Annotated>
