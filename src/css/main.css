@@ -336,6 +336,21 @@
         .hover\:border-primary:hover {
             border-color: #fed65b !important;
         }
+        /* Structured telemetry styling for section headings */
+        h2 {
+            position: relative;
+            padding-top: 1.25rem;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 2.5rem;
+                height: 1.5px;
+                background-color: #fed65b;
+            }
+        }
     }
     .colors-c {
         @apply bg-primary text-on-primary;

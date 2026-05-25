@@ -40,6 +40,11 @@ export default function FeaturedItem(props) {
     
     const IconComponent = icon ? iconMap[icon] : null;
 
+    let indexPrefix = '';
+    if (title === 'Photography') indexPrefix = '01 // ';
+    if (title === 'Cinematography') indexPrefix = '02 // ';
+    if (title === 'Custom Branded') indexPrefix = '03 // ';
+
     return (
         <article
             id={elementId || null}
@@ -57,7 +62,12 @@ export default function FeaturedItem(props) {
             <div>
                 {/* Top Row: Title and SVG Icon */}
                 <div className="flex justify-between items-start mb-6">
-                    {title && <h3 className={classNames('text-2xl font-bold font-sans', styles.title ? mapStyles(styles.title) : null)}>{title}</h3>}
+                    {title && (
+                        <h3 className={classNames('text-2xl font-bold font-sans flex items-baseline', styles.title ? mapStyles(styles.title) : null)}>
+                            {indexPrefix && <span className="font-mono text-xs text-secondary/70 mr-1.5 select-none">{indexPrefix}</span>}
+                            <span>{title}</span>
+                        </h3>
+                    )}
                     {IconComponent && (
                         <div className="text-primary">
                             <IconComponent />

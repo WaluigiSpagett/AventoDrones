@@ -15,8 +15,20 @@ export default function Component(props: HeroSection) {
     const sectionAlignItems = styles.self?.alignItems ?? 'center';
     return (
         <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} styles={styles.self}>
+            {/* Gimbal Viewfinder / Reticle overlay */}
+            <div className="absolute inset-0 pointer-events-none opacity-20 z-0 overflow-hidden select-none">
+                {/* Central gimbal ring */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-dashed border-white/20 rounded-full"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white/40 rounded-full"></div>
+                {/* Viewfinder corner brackets */}
+                <div className="absolute top-8 left-8 w-6 h-6 border-t-2 border-l-2 border-white/30"></div>
+                <div className="absolute top-8 right-8 w-6 h-6 border-t-2 border-r-2 border-white/30"></div>
+                <div className="absolute bottom-8 left-8 w-6 h-6 border-b-2 border-l-2 border-white/30"></div>
+                <div className="absolute bottom-8 right-8 w-6 h-6 border-b-2 border-r-2 border-white/30"></div>
+            </div>
             <div
-                className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8', {
+                className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8 relative z-10', {
                     'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row',
                     'space-y-reverse lg:space-y-0 lg:space-x-8 lg:space-x-reverse': sectionFlexDirection === 'row-reverse',
                     'space-y-reverse': sectionFlexDirection === 'col-reverse'
@@ -49,6 +61,14 @@ function HeroBody(props: HeroSection) {
     const { title, subtitle, text, styles = {} } = props;
     return (
         <>
+            {/* Pulsing telemetry dot indicator */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-white/5 border border-white/10 rounded-full font-mono text-[10px] uppercase tracking-widest text-secondary select-none">
+                <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                UAV OPERATOR ACTIVE
+            </div>
             {title && (
                 <AnnotatedField path=".title">
                     <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null)}>{title}</h2>

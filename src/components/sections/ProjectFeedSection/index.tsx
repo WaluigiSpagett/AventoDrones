@@ -103,6 +103,26 @@ function ProjectsVariantABC(props) {
                         {/* Dark Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10"></div>
                         
+                        {/* Interactive Gimbal Camera Viewfinder Overlay (fades in on hover) */}
+                        <div className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                            {/* Gimbal corner marks */}
+                            <div className="absolute top-4 left-4 w-3 h-3 border-t border-l border-white/40"></div>
+                            <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-white/40"></div>
+                            <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-white/40"></div>
+                            <div className="absolute bottom-4 right-4 w-3 h-3 border-b border-r border-white/40"></div>
+                            {/* Centering dashed circle */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 border border-dashed border-white/25 rounded-full"></div>
+                        </div>
+
+                        {/* Blinking camera telemetry overlay (fades in on hover) */}
+                        <div className="absolute top-4 right-4 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-1.5 px-2 py-0.5 bg-black/50 border border-white/10 rounded font-mono text-[9px] text-white tracking-widest select-none">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
+                            </span>
+                            <span>CAM.{index + 1} {"//"} REC</span>
+                        </div>
+
                         {/* Bottom Metadata & Title */}
                         <div className="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end text-left">
                             <div className="flex items-center gap-3 mb-3">
