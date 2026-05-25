@@ -58,6 +58,7 @@ sections:
     items:
       - type: FeaturedItem
         title: Photography
+        icon: camera
         subtitle: Starting from £100
         text: High-resolution aerial stills perfect for residential surveys and architectural portfolios.
         styles:
@@ -72,6 +73,7 @@ sections:
               - pr-10
       - type: FeaturedItem
         title: Cinematography
+        icon: video
         subtitle: Starting from £150
         text: Smooth, stabilized 4K video capture for commercial projects and event coverage.
         styles:
@@ -86,6 +88,7 @@ sections:
               - pr-10
       - type: FeaturedItem
         title: Custom Branded
+        icon: reel
         subtitle: Starting from £200
         text: Bespoke photo and video packages with professional color grading and branding integration.
         styles:

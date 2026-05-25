@@ -1,6 +1,7 @@
 ---
 type: ProjectLayout
-title: 'Project #2'
+title: 'Commercial Projects'
+category: 'COMMERCIAL'
 date: '2023-01-08'
 client: ''
 description: ''

@@ -1,6 +1,7 @@
 ---
 type: ProjectLayout
-title: 'Project #3'
+title: 'Industrial Inspections'
+category: 'INSPECTION'
 colors: colors-b
 date: '2024-06-18'
 client: ''

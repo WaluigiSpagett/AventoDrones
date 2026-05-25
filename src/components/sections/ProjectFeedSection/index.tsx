@@ -90,33 +90,36 @@ function ProjectsVariantABC(props) {
         >
             {projects.map((project, index) => (
                 <Link key={index} href={project} className="sb-project-feed-item block group">
-                    <article className="bg-surface-container-low border border-outline-variant hover:border-primary rounded-lg p-6 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    <article className="relative group overflow-hidden rounded-lg border border-outline-variant hover:border-primary transition-all duration-500 w-full h-[550px] shadow-sm flex flex-col justify-end">
+                        {/* Background Image */}
                         {showFeaturedImage && project.featuredImage && (
-                            <div className="h-0 w-full mb-6 pt-2/3 relative overflow-hidden rounded-lg">
+                            <div className="absolute inset-0 z-0 w-full h-full">
                                 <ImageBlock
                                     {...project.featuredImage}
-                                    className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                 />
                             </div>
                         )}
-                        <div className="flex flex-col flex-grow">
-                            {showDate && project.date && (
-                                <div className="mb-3 text-sm font-semibold tracking-wider text-secondary uppercase font-mono">
-                                    <ProjectDate date={project.date} />
-                                </div>
-                            )}
-                            <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                            {showDescription && project.description && <p className="text-base text-on-light/80 mt-3 leading-relaxed line-clamp-3">{project.description}</p>}
-                            {showReadMoreLink && (
-                                <div className="mt-auto pt-6 flex items-center justify-between">
-                                    <span className="text-sm font-semibold uppercase tracking-wider group-hover:underline text-secondary transition-colors duration-300">
-                                        View Project
+                        {/* Dark Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10"></div>
+                        
+                        {/* Bottom Metadata & Title */}
+                        <div className="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end text-left">
+                            <div className="flex items-center gap-3 mb-3">
+                                {project.category && (
+                                    <span className="px-2 py-0.5 bg-white text-black font-mono text-[10px] font-extrabold uppercase rounded tracking-wider">
+                                        {project.category}
                                     </span>
-                                    <span className="inline-flex items-center justify-center h-10 w-10 bg-primary/10 group-hover:bg-primary group-hover:text-white rounded-full transition-all duration-300">
-                                        <ArrowUpRightIcon className="fill-current h-4 w-4" />
+                                )}
+                                {showDate && project.date && (
+                                    <span className="font-mono text-xs text-white/80 tracking-wider">
+                                        <ProjectDate date={project.date} />
                                     </span>
-                                </div>
-                            )}
+                                )}
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide leading-tight group-hover:text-primary transition-colors duration-300">
+                                {project.title}
+                            </h3>
                         </div>
                     </article>
                 </Link>
@@ -177,6 +180,6 @@ function ProjectsVariantD(props) {
 
 function ProjectDate({ date }) {
     const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
-    const formattedDate = dayjs(date).format('MM-DD-YYYY');
+    const formattedDate = dayjs(date).format('MM.DD.YYYY');
     return <time dateTime={dateTimeAttr}>{formattedDate}</time>;
 }

@@ -1,6 +1,7 @@
 ---
 type: ProjectLayout
-title: 'Project #1'
+title: 'Residential Surveys'
+category: 'SURVEY'
 colors: colors-b
 date: '2022-10-31'
 client: By Me
