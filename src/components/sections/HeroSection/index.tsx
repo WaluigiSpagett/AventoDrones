@@ -11,38 +11,22 @@ import { Button, HeroSection, Link } from '@/types';
 
 export default function Component(props: HeroSection) {
     const { type, elementId, colors, backgroundSize, title, subtitle, text, media, actions = [], styles = {} } = props;
-    const sectionFlexDirection = styles.self?.flexDirection ?? 'row';
-    const sectionAlignItems = styles.self?.alignItems ?? 'center';
     return (
         <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} styles={styles.self}>
-            {/* Gimbal Viewfinder / Reticle overlay */}
-            <div className="absolute inset-0 pointer-events-none opacity-20 z-0 overflow-hidden select-none">
-                {/* Central gimbal ring */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-dashed border-white/20 rounded-full"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white/40 rounded-full"></div>
-                {/* Viewfinder corner brackets */}
-                <div className="absolute top-8 left-8 w-6 h-6 border-t-2 border-l-2 border-white/30"></div>
-                <div className="absolute top-8 right-8 w-6 h-6 border-t-2 border-r-2 border-white/30"></div>
-                <div className="absolute bottom-8 left-8 w-6 h-6 border-b-2 border-l-2 border-white/30"></div>
-                <div className="absolute bottom-8 right-8 w-6 h-6 border-b-2 border-r-2 border-white/30"></div>
+            {/* Background overlays matching template */}
+            <div className="absolute inset-0 z-0 image-glow">
+                <div className="absolute inset-0 bg-obsidian/60 z-10 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-obsidian/20 to-obsidian z-10"></div>
             </div>
-            <div
-                className={classNames('flex', mapFlexDirectionStyles(sectionFlexDirection), mapStyles({ alignItems: sectionAlignItems }), 'space-y-8 relative z-10', {
-                    'lg:space-y-0 lg:space-x-8': sectionFlexDirection === 'row',
-                    'space-y-reverse lg:space-y-0 lg:space-x-8 lg:space-x-reverse': sectionFlexDirection === 'row-reverse',
-                    'space-y-reverse': sectionFlexDirection === 'col-reverse'
-                })}
-            >
-                <div className="flex-1 w-full">
+            <div className="flex flex-col items-center justify-center space-y-8 relative z-20 w-full text-center">
+                <div className="w-full">
                     <HeroBody {...props} />
-                    <HeroActions actions={actions} styles={styles.actions} hasTopMargin={!!(title || subtitle || text)} />
+                    <HeroActions actions={actions} styles={styles.actions} hasTopMargin={true} />
                 </div>
-                {media && (
-                    <div className="flex-1 w-full">
-                        <HeroMedia media={media} />
-                    </div>
-                )}
+            </div>
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+                <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 0" }}>expand_more</span>
             </div>
         </Section>
     );
@@ -52,57 +36,45 @@ function HeroMedia({ media }) {
     return <DynamicComponent {...media} />;
 }
 
-/*
- This is the only component in this codebase which has a few Stackbit annotations for specific primitive
- field. These are added by the <AnnotatedField> helper.
- The motivation for these annotations: allowing the content editor to edit styles at the field level.
- */
 function HeroBody(props: HeroSection) {
-    const { title, subtitle, text, styles = {} } = props;
+    const { title, subtitle, text } = props;
     return (
-        <>
-            {title && (
-                <AnnotatedField path=".title">
-                    <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null)}>{title}</h2>
-                </AnnotatedField>
-            )}
-            {subtitle && (
-                <AnnotatedField path=".subtitle">
-                    <p className={classNames('text-xl', 'sm:text-2xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-4': title })}>{subtitle}</p>
-                </AnnotatedField>
-            )}
+        <div className="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-24">
+            <h1 className="font-display-lg text-display-lg md:text-[80px] leading-[1.1] text-bone-white mb-6 tracking-tight">
+                View your work from<br/>
+                <span className="text-metallic-gold italic font-light">another angle</span>
+            </h1>
             {text && (
-                <AnnotatedField path=".text">
-                    <Markdown
-                        options={{ forceBlock: true, forceWrapper: true }}
-                        className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null, {
-                            'mt-6': title || subtitle
-                        })}
-                    >
-                        {text}
-                    </Markdown>
-                </AnnotatedField>
+                <p className="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-10 tracking-wide">
+                    {text}
+                </p>
             )}
-        </>
+        </div>
     );
 }
 
 function HeroActions(props: { actions: (Button | Link)[]; styles: any; hasTopMargin: boolean }) {
-    const { actions = [], styles = {}, hasTopMargin } = props;
+    const { actions = [] } = props;
     if (actions.length === 0) {
         return null;
     }
     return (
-        <div
-            className={classNames('overflow-x-hidden', {
-                'mt-8': hasTopMargin
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 w-full">
+            {actions.map((action, index) => {
+                const isPrimary = (action as any).style === 'primary';
+                return (
+                    <Action
+                        key={index}
+                        {...action}
+                        className={classNames(
+                            "px-8 py-4 font-label-caps text-label-caps transition-colors duration-300 w-full sm:w-auto text-center",
+                            isPrimary
+                                ? "bg-metallic-gold text-obsidian hover:bg-bone-white"
+                                : "border border-bone-white text-bone-white hover:border-metallic-gold hover:text-metallic-gold glass-panel"
+                        )}
+                    />
+                );
             })}
-        >
-            <div className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', mapStyles(styles))}>
-                {actions.map((action, index) => (
-                    <Action key={index} {...action} className="my-2 mx-2 lg:whitespace-nowrap" />
-                ))}
-            </div>
         </div>
     );
 }

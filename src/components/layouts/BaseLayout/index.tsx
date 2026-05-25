@@ -35,6 +35,8 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
                             return <meta key={metaTag.property} name={metaTag.property} content={metaTag.content} />;
                         })}
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
+                        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+                        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
                         {site.favicon && <link rel="icon" href={site.favicon} />}
                     </Head>
                     {site.header && (

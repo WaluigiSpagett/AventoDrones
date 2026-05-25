@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,8 @@
 @layer base {
     body {
         @apply flex flex-col min-h-screen antialiased;
+        background-color: #131313;
+        color: #e2e2e2;
     }
     body > div,
     .sb-page,
@@ -145,16 +147,26 @@
         transform: scale(1.02);
     }
     .sb-component-button-primary {
-        @apply bg-primary text-on-primary border-primary font-semibold tracking-wider;
+        @apply border-primary font-semibold tracking-wider;
+        background-color: #D4AF37;
+        color: #000000;
+        border-color: #D4AF37;
     }
     .sb-component-button-primary:hover {
-        @apply bg-transparent text-primary border-primary;
+        background-color: #F9F6EE;
+        color: #000000;
+        border-color: #F9F6EE;
     }
     .sb-component-button-secondary {
-        @apply bg-secondary text-on-secondary border-secondary font-semibold tracking-wider;
+        @apply font-semibold tracking-wider;
+        background-color: transparent;
+        color: #F9F6EE;
+        border-color: #F9F6EE;
     }
     .sb-component-button-secondary:hover {
-        @apply bg-transparent text-secondary border-secondary;
+        border-color: #D4AF37;
+        color: #D4AF37;
+        background-color: transparent;
     }
 
     /* Links */
@@ -292,63 +304,28 @@
         }
     }
     .colors-b {
-        background-color: #f3f2ed;
-        color: #1a1c1c;
+        background-color: #131313;
+        color: #e2e2e2;
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply placeholder-opacity-75 text-dark placeholder-dark;
+            color: #e2e2e2;
+            &::placeholder {
+                color: #d0c5af;
+            }
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
         .sb-header-logo:before {
-            @apply bg-dark;
+            background-color: #e2e2e2;
         }
         .sb-component-link-fill:hover,
         .sb-component-social-fill:hover,
         .sb-header-logo:hover {
-            @apply text-light;
+            color: #131313;
         }
         .sb-header-overlay {
-            background-color: #f3f2ed;
-        }
-        .border-outline-variant {
-            border-color: #c5c6ca;
-        }
-        .border-outline-variant\/30 {
-            border-color: rgba(197, 198, 202, 0.3);
-        }
-        .divide-outline-variant > :not([hidden]) ~ :not([hidden]) {
-            border-color: #c5c6ca;
-        }
-        .bg-surface-container-low {
-            background-color: #ebe9e0;
-        }
-        .text-on-light\/80 {
-            color: #44474a;
-        }
-        .text-secondary {
-            color: #735c00;
-        }
-        .text-primary {
-            color: #735c00;
-        }
-        .hover\:border-primary:hover {
-            border-color: #735c00 !important;
-        }
-        h2 {
-            position: relative;
-            padding-top: 1rem;
-            
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 2.5rem;
-                height: 1.5px;
-                background-color: #735c00;
-            }
+            background-color: #131313;
         }
     }
     .colors-c {
@@ -421,10 +398,9 @@
 
 /* Glassmorphism utility */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Inner glow for imagery */
@@ -432,106 +408,137 @@
     content: '';
     position: absolute;
     inset: 0;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
     pointer-events: none;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #353535;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4d4635;
 }
 
 /* Custom premium overrides to match raw HTML template aesthetics */
 
-/* Hero section translucent dark high-contrast cockpit overlay */
+/* Hero section dark overlay with high-contrast white text */
 .sb-component-hero-section {
-    background-color: rgba(0, 1, 1, 0.45) !important;
-    color: #ffffff !important;
-    
+    background-color: rgba(0, 0, 0, 0.55) !important;
+    color: #F9F6EE !important;
+
     h2.h1, h2, p, .sb-markdown {
-        color: #ffffff !important;
+        color: #F9F6EE !important;
     }
-    
+
     .text-secondary {
-        color: #ffe088 !important; /* light gold/secondary-fixed */
+        color: #c9c6bf !important;
     }
-    
-    /* Hollow glass-panel button styling */
-    .sb-component-button-secondary {
-        border-color: #ffffff !important;
-        color: #ffffff !important;
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-    }
-    .sb-component-button-secondary:hover {
-        background-color: #ffffff !important;
-        color: #1a1c1c !important;
-        border-color: #ffffff !important;
-    }
+
+    /* Hero primary gold button */
     .sb-component-button-primary {
-        background-color: #735c00 !important;
-        border-color: #735c00 !important;
-        color: #ffffff !important;
+        background-color: #D4AF37 !important;
+        border-color: #D4AF37 !important;
+        color: #000000 !important;
     }
     .sb-component-button-primary:hover {
-        background-color: #ffffff !important;
-        color: #1a1c1c !important;
-        border-color: #ffffff !important;
+        background-color: #F9F6EE !important;
+        border-color: #F9F6EE !important;
+        color: #000000 !important;
     }
-}
 
-/* Portfolio Section: Solid sand-low background block */
-.sb-component-featured-projects-section {
-    background-color: #ebe9e0 !important;
-    color: #1a1c1c !important;
-    h2, p {
-        color: #1a1c1c !important;
-    }
-}
-
-/* Footer Section: Solid sand-container background block */
-.sb-component-footer {
-    background-color: #e6e3da !important;
-    color: #1a1c1c !important;
-    a, p, span {
-        color: #1a1c1c !important;
-    }
-    a:hover {
-        color: #735c00 !important;
-    }
-}
-
-/* Scrolled/Transparent Header Overrides */
-header.sb-component-header:not(.scrolled) {
-    .sb-component-link, .sb-component-social, .sb-header-logo, span {
-        color: #ffffff !important;
-    }
-    .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
-        color: #ffe088 !important;
-    }
+    /* Hollow glass-panel button styling */
     .sb-component-button-secondary {
-        border-color: #ffffff !important;
-        color: #ffffff !important;
-        background-color: rgba(255, 255, 255, 0.1) !important;
-        backdrop-filter: blur(10px) !important;
+        border-color: #F9F6EE !important;
+        color: #F9F6EE !important;
+        background-color: rgba(0, 0, 0, 0.4) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
     }
     .sb-component-button-secondary:hover {
-        background-color: #ffffff !important;
-        color: #1a1c1c !important;
-        border-color: #ffffff !important;
+        border-color: #D4AF37 !important;
+        color: #D4AF37 !important;
+        background-color: transparent !important;
+    }
+}
+
+/* Services section: obsidian background with border-bottom */
+.sb-component-featured-items-section {
+    background-color: #000000 !important;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+    color: #e2e2e2 !important;
+    h2, p {
+        color: #e2e2e2 !important;
+    }
+}
+
+/* Portfolio Section: obsidian background */
+.sb-component-featured-projects-section {
+    background-color: #000000 !important;
+    color: #e2e2e2 !important;
+    h2, p {
+        color: #e2e2e2 !important;
+    }
+}
+
+/* FAQ section: dark surface-container-lowest  */
+.sb-component-text-section {
+    background-color: #0e0e0e !important;
+    border-top: 1px solid #353535;
+    color: #e2e2e2 !important;
+    h2, h3, p {
+        color: #e2e2e2 !important;
+    }
+}
+
+/* Quote section: dark */
+.sb-component-quote-section {
+    background-color: #131313 !important;
+    color: #e2e2e2 !important;
+    h2, p, blockquote, span {
+        color: #e2e2e2 !important;
+    }
+}
+
+/* Footer Section: obsidian background */
+.sb-component-footer {
+    background-color: #000000 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e2e2 !important;
+    a, p, span {
+        color: #d0c5af !important;
+    }
+    a:hover {
+        color: #F9F6EE !important;
+    }
+}
+
+/* Fixed Header Color Transitions */
+header.sb-component-header:not(.scrolled) {
+    .sb-component-link, .sb-component-social, .sb-header-logo, span, a {
+        color: #F9F6EE !important;
+    }
+    .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
+        color: #D4AF37 !important;
     }
 }
 
 header.scrolled {
-    .sb-component-link, .sb-component-social, .sb-header-logo, span {
-        color: #1a1c1c !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+    .sb-component-link, .sb-component-social, .sb-header-logo, span, a {
+        color: #F9F6EE !important;
     }
     .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
-        color: #735c00 !important;
-    }
-    .sb-component-button-secondary {
-        border-color: #735c00 !important;
-        background-color: #735c00 !important;
-        color: #ffffff !important;
-    }
-    .sb-component-button-secondary:hover {
-        background-color: #1a1c1c !important;
-        border-color: #1a1c1c !important;
+        color: #D4AF37 !important;
     }
 }

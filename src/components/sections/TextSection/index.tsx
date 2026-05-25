@@ -4,12 +4,13 @@ import classNames from 'classnames';
 
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import Section from '../Section';
+import { Action } from '../../atoms';
 
 export default function TextSection(props) {
-    const { type, elementId, colors, variant, title, subtitle, text, styles = {} } = props;
+    const { type, elementId, colors, variant, title, subtitle, text, actions = [], styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            <TextBodyVariants variant={variant} title={title} subtitle={subtitle} text={text} styles={styles} />
+            <TextBodyVariants variant={variant} title={title} subtitle={subtitle} text={text} actions={actions} styles={styles} />
         </Section>
     );
 }
@@ -27,28 +28,65 @@ function TextBodyVariants(props) {
 }
 
 function TextBodyVariantA(props) {
-    const { title, subtitle, text, styles = {} } = props;
+    const { title, text, actions = [] } = props;
+
+    // Custom renderer rules to style FAQ markdown elements matching raw HTML
+    const faqOptions = {
+        forceBlock: true,
+        forceWrapper: true,
+        overrides: {
+            h3: {
+                component: ({ children }) => (
+                    <h3 className="font-headline-md text-headline-md text-bone-white mb-4 mt-8">{children}</h3>
+                )
+            },
+            p: {
+                component: ({ children }) => (
+                    <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">{children}</p>
+                )
+            },
+            hr: {
+                component: () => (
+                    <div className="border-b border-surface-variant pb-2 mb-6"></div>
+                )
+            }
+        }
+    };
+
     return (
-        <div>
-            {/* Dynamic modern telemetry label */}
-            {title === 'Frequently Asked Questions' && (
-                <div className="text-center">
-                    <span className="font-mono text-xs text-secondary mb-4 inline-block uppercase tracking-widest font-semibold select-none">[ INFORMATION ]</span>
+        <div className="max-w-3xl mx-auto">
+            {/* Template telemetry tag & centered header */}
+            <div className="text-center mb-16">
+                <span className="font-label-mono text-label-mono text-metallic-gold mb-4 block">[ INFORMATION ]</span>
+                {title && <h2 className="font-headline-lg text-headline-lg text-bone-white">{title}</h2>}
+            </div>
+
+            {/* Structural FAQ list with custom markdown rendering */}
+            {text && (
+                <div className="space-y-8">
+                    {/* Split FAQ text by ### headers and render each as a bordered item */}
+                    {text.split(/(?=###\s)/).filter(block => block.trim()).map((block, index) => (
+                        <div key={index} className="border-b border-surface-variant pb-8">
+                            <Markdown options={faqOptions}>
+                                {block.trim()}
+                            </Markdown>
+                        </div>
+                    ))}
                 </div>
             )}
-            {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
-            {subtitle && (
-                <p className={classNames('text-xl', 'sm:text-2xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': title })}>{subtitle}</p>
-            )}
-            {text && (
-                <Markdown
-                    options={{ forceBlock: true, forceWrapper: true }}
-                    className={classNames('sb-markdown', 'sm:text-lg', styles.text ? mapStyles(styles.text) : null, {
-                        'mt-6': title || subtitle
-                    })}
-                >
-                    {text}
-                </Markdown>
+
+            {/* Trailing action block */}
+            {actions.length > 0 && (
+                <div className="mt-16 text-center">
+                    <p className="font-label-mono text-label-mono text-secondary mb-6">Need more information?</p>
+                    {actions.map((action, index) => (
+                        <Action
+                            key={index}
+                            {...action}
+                            className="inline-flex items-center justify-center px-6 py-3 bg-surface-container-low border border-surface-variant text-bone-white font-label-caps text-label-caps hover:border-metallic-gold hover:text-metallic-gold transition-colors duration-300"
+                        />
+                    ))}
+                </div>
             )}
         </div>
     );

@@ -117,8 +117,8 @@ sections:
   - type: FeaturedProjectsSection
     elementId: 'portfolio'
     colors: colors-f
-    title: Selected Works
-    subtitle: Project Archive
+    title: Project Archive
+    subtitle: Selected Works
     showDate: true
     showDescription: true
     showFeaturedImage: true

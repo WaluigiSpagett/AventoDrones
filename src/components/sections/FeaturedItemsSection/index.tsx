@@ -10,36 +10,34 @@ export default function FeaturedItemsSection(props) {
     const { type, elementId, colors, title, subtitle, actions = [], items = [], columns = 3, spacingX = 16, spacingY = 16, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            {/* Dynamic modern telemetry label */}
-            {title === 'Precision Services' && (
-                <span className="font-mono text-xs text-secondary mb-4 block uppercase tracking-widest font-semibold select-none">[ CAPABILITIES ]</span>
-            )}
-            {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
-            {subtitle && (
-                <p
-                    className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, {
-                        'mt-6': title
-                    })}
-                >
-                    {subtitle}
-                </p>
-            )}
-            {items.length > 0 && (
-                <div
-                    className={classNames('grid', mapColStyles(columns), {
-                        'mt-12': title || subtitle
-                    })}
-                    style={{
-                        columnGap: spacingX ? `${spacingX}px` : null,
-                        rowGap: spacingY ? `${spacingY}px` : null
-                    }}
-                >
-                    {items.map((item, index) => (
-                        <FeaturedItem key={index} {...item} />
-                    ))}
+            <div className="max-w-container-max mx-auto">
+                {/* Section header with label and description side by side */}
+                <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <div>
+                        <span className="font-label-mono text-label-mono text-metallic-gold mb-4 block">[ CAPABILITIES ]</span>
+                        {title && <h2 className="font-headline-lg text-headline-lg text-bone-white">{title}</h2>}
+                    </div>
+                    {subtitle && (
+                        <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            {subtitle}
+                        </p>
+                    )}
                 </div>
-            )}
-            <FeaturedItemsActions actions={actions} styles={styles.actions} />
+                {items.length > 0 && (
+                    <div
+                        className={classNames('grid', mapColStyles(columns))}
+                        style={{
+                            columnGap: spacingX ? `${spacingX}px` : null,
+                            rowGap: spacingY ? `${spacingY}px` : null
+                        }}
+                    >
+                        {items.map((item, index) => (
+                            <FeaturedItem key={index} {...item} />
+                        ))}
+                    </div>
+                )}
+                <FeaturedItemsActions actions={actions} styles={styles.actions} />
+            </div>
         </Section>
     );
 }

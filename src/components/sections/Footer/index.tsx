@@ -4,47 +4,39 @@ import classNames from 'classnames';
 import { Action } from '../../atoms';
 
 export default function Footer(props) {
-    const { primaryLinks = [], contacts, copyrightText, styles = {} } = props;
+    const { primaryLinks = [], copyrightText } = props;
     return (
-        <footer className={classNames('sb-component', 'sb-component-footer', styles.self?.padding ?? 'py-16 px-4')}>
-            <div className={classNames('border-t-2', 'border-current', 'mx-auto', mapMaxWidthStyles(styles.self?.width ?? 'narrow'))}>
-                <div className="flex flex-col md:flex-row md:flex-wrap">
-                    {primaryLinks.length > 0 && (
-                        <div className={classNames('mt-6', contacts ? 'w-full' : 'md:mr-auto')}>
-                            <ul className="flex flex-wrap max-w-5xl text-lg">
-                                {primaryLinks.map((link, index) => (
-                                    <li key={index} className="mr-8 mt-2">
-                                        <Action {...link} />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-                    {contacts && (
-                        <Contacts
-                            {...contacts}
-                            className={classNames(
-                                'text-lg',
-                                'space-y-4',
-                                'md:max-w-3xl',
-                                'md:mr-auto',
-                                'md:pr-12',
-                                primaryLinks.length > 0 ? 'mt-12 md:mt-32' : 'mt-8'
-                            )}
-                        />
-                    )}
-                    {/* Please keep this attribution up if you're using Stackbit's free plan. */}
-                    {copyrightText && (
-                        <div className={classNames('mt-8', primaryLinks.length > 0 || contacts ? 'md:self-end' : null)}>
-                            <Markdown
-                                options={{ forceInline: true, forceWrapper: true, wrapper: 'p' }}
-                                className="sb-markdown text-sm tracking-widest uppercase"
-                            >
-                                {copyrightText}
-                            </Markdown>
-                        </div>
-                    )}
+        <footer className="w-full py-margin-desktop bg-obsidian border-t border-white/10">
+            <div className="flex flex-col items-center gap-unit px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                {/* Logo */}
+                <div className="mb-12 opacity-80 hover:opacity-100 transition-opacity duration-300 text-center select-none">
+                    <img
+                        alt="Avento Drones Logo"
+                        className="h-16 w-16 object-contain mb-4 mx-auto filter grayscale opacity-70"
+                        src="/images/square logo real.png"
+                    />
+                    <span className="font-headline-md text-headline-md text-bone-white uppercase tracking-widest font-light">AVENTO</span>
                 </div>
+                {/* Navigation links */}
+                {primaryLinks.length > 0 && (
+                    <nav className="flex flex-wrap justify-center gap-8 mb-12">
+                        {primaryLinks.map((link, index) => (
+                            <Action
+                                key={index}
+                                {...link}
+                                className="font-label-mono text-label-mono text-on-surface-variant hover:text-bone-white transition-colors duration-300 uppercase"
+                            />
+                        ))}
+                    </nav>
+                )}
+                {/* Copyright */}
+                {copyrightText && (
+                    <div className="text-center w-full pt-8 border-t border-surface-variant/50">
+                        <p className="font-label-mono text-label-caps text-surface-variant">
+                            © 2024 AVENTO DRONES. ALL RIGHTS RESERVED.
+                        </p>
+                    </div>
+                )}
             </div>
         </footer>
     );
@@ -83,17 +75,4 @@ function Contacts(props) {
             )}
         </div>
     );
-}
-
-function mapMaxWidthStyles(width) {
-    switch (width) {
-        case 'narrow':
-            return 'max-w-7xl';
-        case 'wide':
-            return 'max-w-screen-2xl';
-        case 'full':
-            return 'max-w-full';
-        default:
-            return null;
-    }
 }

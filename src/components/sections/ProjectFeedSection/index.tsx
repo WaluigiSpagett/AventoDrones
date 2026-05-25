@@ -26,14 +26,11 @@ export default function ProjectFeedSection(props) {
     } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            {/* Dynamic modern telemetry label */}
-            {title === 'Project Archive' && (
-                <span className="font-mono text-xs text-secondary mb-4 block uppercase tracking-widest font-semibold select-none">[ SELECTED WORKS ]</span>
-            )}
-            {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
-            {subtitle && (
-                <p className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': title })}>{subtitle}</p>
-            )}
+            {/* Section header */}
+            <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16 text-center">
+                <span className="font-label-mono text-label-mono text-metallic-gold mb-4 block">[ SELECTED WORKS ]</span>
+                {title && <h2 className="font-headline-lg text-headline-lg text-bone-white">{title}</h2>}
+            </div>
             <ProjectFeedVariants
                 variant={variant}
                 projects={projects}
@@ -41,7 +38,7 @@ export default function ProjectFeedSection(props) {
                 showDescription={showDescription}
                 showFeaturedImage={showFeaturedImage}
                 showReadMoreLink={showReadMoreLink}
-                hasTopMargin={!!(title || subtitle)}
+                hasTopMargin={false}
             />
             <ProjectFeedActions actions={actions} styles={styles.actions} />
         </Section>
@@ -54,12 +51,14 @@ function ProjectFeedActions(props) {
         return null;
     }
     return (
-        <div className="mt-10 overflow-x-hidden">
-            <div className={classNames('flex', 'flex-wrap', 'items-center', '-mx-2', mapStyles(styles))}>
-                {actions.map((action, index) => (
-                    <Action key={index} {...action} className="my-2 mx-2 lg:whitespace-nowrap" />
-                ))}
-            </div>
+        <div className="text-center mt-16">
+            {actions.map((action, index) => (
+                <Action
+                    key={index}
+                    {...action}
+                    className="inline-flex items-center justify-center px-8 py-4 border border-surface-variant text-bone-white font-label-caps text-label-caps hover:border-metallic-gold hover:text-metallic-gold transition-colors duration-300"
+                />
+            ))}
         </div>
     );
 }
@@ -83,67 +82,49 @@ function ProjectsVariantABC(props) {
     if (projects.length === 0) {
         return null;
     }
+
+    // Bento grid layout from template: first item 8-col, second 4-col, third full 12-col
+    const gridSpans = ['md:col-span-8', 'md:col-span-4', 'md:col-span-12'];
+    const heights = ['md:h-[600px]', 'md:h-[600px]', 'md:h-[500px]'];
+    const aspects = ['aspect-video', 'aspect-square', 'aspect-video'];
+
     return (
-        <div
-            className={classNames('grid', 'gap-8', {
-                'md:grid-cols-2': variant === 'variant-a',
-                'md:grid-cols-3': variant === 'variant-b',
-                'justify-center': variant === 'variant-c',
-                'mt-12': hasTopMargin
-            })}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-1 md:gap-4 px-1 md:px-margin-desktop max-w-[1920px] mx-auto">
             {projects.map((project, index) => (
-                <Link key={index} href={project} className="sb-project-feed-item block group">
-                    <article className="relative group overflow-hidden rounded-lg border border-outline-variant hover:border-primary transition-all duration-500 w-full h-[550px] shadow-sm flex flex-col justify-end">
+                <Link key={index} href={project} className={classNames('sb-project-feed-item block group', gridSpans[index] || 'md:col-span-12')}>
+                    <article className={classNames(
+                        'relative group overflow-hidden',
+                        aspects[index] || 'aspect-video',
+                        'md:aspect-auto',
+                        heights[index] || 'md:h-[500px]'
+                    )}>
                         {/* Background Image */}
                         {showFeaturedImage && project.featuredImage && (
-                            <div className="absolute inset-0 z-0 w-full h-full">
-                                <ImageBlock
-                                    {...project.featuredImage}
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                                />
-                            </div>
+                            <ImageBlock
+                                {...project.featuredImage}
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            />
                         )}
-                        {/* Dark Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-10"></div>
-                        
-                        {/* Interactive Gimbal Camera Viewfinder Overlay (fades in on hover) */}
-                        <div className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-                            {/* Gimbal corner marks */}
-                            <div className="absolute top-4 left-4 w-3 h-3 border-t border-l border-white/40"></div>
-                            <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-white/40"></div>
-                            <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-white/40"></div>
-                            <div className="absolute bottom-4 right-4 w-3 h-3 border-b border-r border-white/40"></div>
-                            {/* Centering dashed circle */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 border border-dashed border-white/25 rounded-full"></div>
-                        </div>
-
-                        {/* Blinking camera telemetry overlay (fades in on hover) */}
-                        <div className="absolute top-4 right-4 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-1.5 px-2 py-0.5 bg-black/50 border border-white/10 rounded font-mono text-[9px] text-white tracking-widest select-none">
-                            <span className="relative flex h-1.5 w-1.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-                            </span>
-                            <span>CAM.{index + 1} {"//"} REC</span>
-                        </div>
-
-                        {/* Bottom Metadata & Title */}
-                        <div className="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end text-left">
-                            <div className="flex items-center gap-3 mb-3">
+                        {/* Dark gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-60"></div>
+                        {/* Bottom content: slides up on hover */}
+                        <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="flex items-center gap-3 mb-2">
                                 {project.category && (
-                                    <span className="px-2 py-0.5 bg-white text-black font-mono text-[10px] font-extrabold uppercase rounded tracking-wider">
+                                    <span className="px-3 py-1 bg-obsidian/80 border border-metallic-gold/30 font-label-mono text-label-caps text-secondary backdrop-blur-sm">
                                         {project.category}
                                     </span>
                                 )}
                                 {showDate && project.date && (
-                                    <span className="font-mono text-xs text-white/80 tracking-wider">
+                                    <span className="font-label-caps text-label-caps text-bone-white/70 tracking-widest">
                                         <ProjectDate date={project.date} />
                                     </span>
                                 )}
                             </div>
-                            <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide leading-tight group-hover:text-primary transition-colors duration-300">
-                                {project.title}
-                            </h3>
+                            <h3 className="font-headline-md text-headline-md text-bone-white mb-2">{project.title}</h3>
+                            <span className="inline-flex items-center text-metallic-gold font-label-caps text-label-caps hover:text-bone-white transition-colors opacity-0 group-hover:opacity-100 duration-500 delay-100">
+                                VIEW PROJECT <span className="material-symbols-outlined ml-2 text-sm" style={{ fontVariationSettings: "'FILL' 0" }}>arrow_forward</span>
+                            </span>
                         </div>
                     </article>
                 </Link>
