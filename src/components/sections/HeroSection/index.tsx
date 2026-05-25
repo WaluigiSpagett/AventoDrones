@@ -61,14 +61,6 @@ function HeroBody(props: HeroSection) {
     const { title, subtitle, text, styles = {} } = props;
     return (
         <>
-            {/* Pulsing telemetry dot indicator */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-white/5 border border-white/10 rounded-full font-mono text-[10px] uppercase tracking-widest text-secondary select-none">
-                <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                UAV OPERATOR ACTIVE
-            </div>
             {title && (
                 <AnnotatedField path=".title">
                     <h2 className={classNames('h1', styles.title ? mapStyles(styles.title) : null)}>{title}</h2>
