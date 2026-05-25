@@ -292,24 +292,49 @@
         }
     }
     .colors-b {
-        @apply bg-light text-on-light;
+        background-color: rgba(26, 28, 28, 0.85);
+        color: #ffffff;
         .sb-input,
         .sb-select,
         .sb-textarea {
-            @apply placeholder-opacity-75 text-on-light placeholder-on-light;
+            @apply placeholder-opacity-75 text-white placeholder-white;
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
         .sb-header-logo:before {
-            @apply bg-on-light;
+            @apply bg-white;
         }
         .sb-component-link-fill:hover,
         .sb-component-social-fill:hover,
         .sb-header-logo:hover {
-            @apply text-light;
+            @apply text-dark;
         }
         .sb-header-overlay {
-            @apply bg-light;
+            background-color: rgba(26, 28, 28, 0.98);
+        }
+        .border-outline-variant {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .border-outline-variant\/30 {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+        .divide-outline-variant > :not([hidden]) ~ :not([hidden]) {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .bg-surface-container-low {
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+        .text-on-light\/80 {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .text-secondary {
+            color: #fed65b;
+        }
+        .text-primary {
+            color: #fed65b;
+        }
+        .hover\:border-primary:hover {
+            border-color: #fed65b !important;
         }
     }
     .colors-c {

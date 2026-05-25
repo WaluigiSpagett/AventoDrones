@@ -139,7 +139,7 @@ sections:
         width: wide
         padding:
           - pt-32
-          - pb-32
+          - pb-12
           - pl-4
           - pr-4
       title:
@@ -152,20 +152,20 @@ sections:
     quote: View your work from another angle.
     name: '- Will'
     title: Head UAV Photographer at Avento
-    colors: colors-d
+    colors: colors-f
     elementId: 'quote'
     styles:
       self:
         height: auto
         width: wide
         padding:
-          - pt-20
-          - pb-20
+          - pt-10
+          - pb-10
           - pl-8
           - pr-8
         justifyContent: center
         borderRadius: large
-        borderColor: border-dark
+        borderColor: border-current
         borderWidth: 1
         borderStyle: solid
       quote:
@@ -198,8 +198,8 @@ sections:
         height: auto
         width: narrow
         padding:
-          - pt-32
-          - pb-32
+          - pt-8
+          - pb-16
           - pl-4
           - pr-4
         justifyContent: center
