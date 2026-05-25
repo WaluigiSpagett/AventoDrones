@@ -26,6 +26,10 @@ export default function ProjectFeedSection(props) {
     } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
+            {/* Dynamic modern telemetry label */}
+            {title === 'Project Archive' && (
+                <span className="font-mono text-xs text-secondary mb-4 block uppercase tracking-widest font-semibold select-none">[ SELECTED WORKS ]</span>
+            )}
             {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
             {subtitle && (
                 <p className={classNames('text-lg', 'sm:text-xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-6': title })}>{subtitle}</p>

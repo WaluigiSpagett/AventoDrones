@@ -30,6 +30,12 @@ function TextBodyVariantA(props) {
     const { title, subtitle, text, styles = {} } = props;
     return (
         <div>
+            {/* Dynamic modern telemetry label */}
+            {title === 'Frequently Asked Questions' && (
+                <div className="text-center">
+                    <span className="font-mono text-xs text-secondary mb-4 inline-block uppercase tracking-widest font-semibold select-none">[ INFORMATION ]</span>
+                </div>
+            )}
             {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
             {subtitle && (
                 <p className={classNames('text-xl', 'sm:text-2xl', styles.subtitle ? mapStyles(styles.subtitle) : null, { 'mt-2': title })}>{subtitle}</p>

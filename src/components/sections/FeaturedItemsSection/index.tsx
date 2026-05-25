@@ -10,6 +10,10 @@ export default function FeaturedItemsSection(props) {
     const { type, elementId, colors, title, subtitle, actions = [], items = [], columns = 3, spacingX = 16, spacingY = 16, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
+            {/* Dynamic modern telemetry label */}
+            {title === 'Precision Services' && (
+                <span className="font-mono text-xs text-secondary mb-4 block uppercase tracking-widest font-semibold select-none">[ CAPABILITIES ]</span>
+            )}
             {title && <h2 className={classNames(styles.title ? mapStyles(styles.title) : null)}>{title}</h2>}
             {subtitle && (
                 <p

@@ -11,12 +11,37 @@ import MenuIcon from '../../svgs/menu';
 export default function Header(props) {
     const { headerVariant, isSticky, title, isTitleVisible, logo, primaryLinks = [], socialLinks = [], styles = {} } = props;
     const headerWidth = styles.self?.width ?? 'narrow';
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <header className={classNames('sb-component', 'sb-component-header', isSticky ? 'sticky top-0 z-10' : 'relative', 'border-b', 'border-current')}>
+        <header
+            className={classNames(
+                'sb-component',
+                'sb-component-header',
+                'fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-transparent',
+                isScrolled
+                    ? 'bg-white shadow-sm text-dark scrolled border-outline-variant/30'
+                    : 'bg-transparent text-white'
+            )}
+        >
             <div
                 className={classNames('mx-auto', mapMaxWidthStyles(headerWidth), {
-                    'xl:border-l xl:border-r border-current': headerWidth === 'narrow',
-                    '2xl:border-l 2xl:border-r border-current': headerWidth === 'wide'
+                    'xl:border-l xl:border-r border-white/20': headerWidth === 'narrow' && !isScrolled,
+                    'xl:border-l xl:border-r border-outline-variant/30': headerWidth === 'narrow' && isScrolled,
+                    '2xl:border-l 2xl:border-r border-white/20': headerWidth === 'wide' && !isScrolled,
+                    '2xl:border-l 2xl:border-r border-outline-variant/30': headerWidth === 'wide' && isScrolled
                 })}
             >
                 <Link href="#main" className="sr-only">
