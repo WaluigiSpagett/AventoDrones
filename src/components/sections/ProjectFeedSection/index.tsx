@@ -90,9 +90,9 @@ function ProjectsVariantABC(props) {
         >
             {projects.map((project, index) => (
                 <Link key={index} href={project} className="sb-project-feed-item block group">
-                    <article className="bg-surface-container-low border border-outline-variant hover:border-primary rounded-2xl p-6 transition-all duration-500 flex flex-col h-full overflow-hidden">
+                    <article className="bg-surface-container-low border border-outline-variant hover:border-primary rounded-lg p-6 transition-all duration-500 flex flex-col h-full overflow-hidden">
                         {showFeaturedImage && project.featuredImage && (
-                            <div className="h-0 w-full mb-6 pt-2/3 relative overflow-hidden rounded-xl">
+                            <div className="h-0 w-full mb-6 pt-2/3 relative overflow-hidden rounded-lg">
                                 <ImageBlock
                                     {...project.featuredImage}
                                     className="absolute left-0 top-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"

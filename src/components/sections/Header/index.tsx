@@ -188,7 +188,7 @@ function ListOfLinks({ links, inMobileMenu }) {
         <li key={index} className={classNames(inMobileMenu ? 'text-center w-full' : 'inline-flex items-stretch')}>
             <Action
                 {...link}
-                className={classNames(inMobileMenu ? 'text-xl' : 'sb-component-link-fill p-4', 'font-normal', 'text-base', 'tracking-widest', 'uppercase')}
+                className={classNames(inMobileMenu ? 'text-xl' : 'sb-component-link-fill p-4', 'font-mono', 'text-sm', 'tracking-wider', 'uppercase')}
             />
         </li>
     ));

@@ -17,7 +17,7 @@ export default function FeaturedItem(props) {
                 'sb-component',
                 'sb-component-block',
                 'sb-component-item',
-                'bg-surface-container-low border border-outline-variant rounded-2xl p-8 hover:border-primary transition-all duration-300 flex flex-col justify-between h-full',
+                'bg-surface-container-low border border-outline-variant rounded-lg p-10 hover:border-primary transition-all duration-500 flex flex-col justify-between h-full',
                 mapStyles(otherSelfStyles)
             )}
             style={{

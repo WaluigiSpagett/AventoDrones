@@ -45,7 +45,8 @@ module.exports = {
             fontFamily: {
                 fontPrimary: ['Inter', 'sans-serif'],
                 fontSecondary: ['Chivo', 'sans-serif'],
-                fontMonospaced: ['JetBrains Mono', 'monospace']
+                fontMonospaced: ['JetBrains Mono', 'monospace'],
+                mono: ['JetBrains Mono', 'monospace']
             },
             letterSpacing: {
                 wide: '.05em',

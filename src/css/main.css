@@ -137,7 +137,7 @@
 
     /* Buttons */
     .sb-component-button {
-        @apply relative inline-flex items-center justify-center text-lg text-center no-underline transition duration-300 ease-in-out border-2 rounded-xl;
+        @apply relative inline-flex items-center justify-center text-lg text-center no-underline transition duration-300 ease-in-out border-2 rounded;
         box-shadow: none;
     }
     .sb-component-button:not(.sb-component-button-no-hover):hover,
