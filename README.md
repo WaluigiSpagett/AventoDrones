@@ -1,53 +1,53 @@
-# Netlify Developer Portfolio Starter (auto-annotated)
+# Avento Drones | Aerial Cinematography & UAV Photography
 
-![Developer Portfolio](https://assets.stackbit.com/docs/personal-nextjs-starter-thumb.png)
+Welcome to the official repository for **Avento Drones**, a premium, high-performance static website for professional UAV photography and aerial cinematography services based in the UK.
 
-This is a full-fledged portfolio website built with Next.js, Tailwind CSS, [visual editor](https://docs.netlify.com/visual-editor/overview/) and the [Git Content Source](https://docs.netlify.com/create/content-sources/git/).
+---
 
-The codebase showcases **how to apply annotations at scale**, meaning: how to make much of your components [highlightable in the visual editor](https://docs.netlify.com/visual-editor/visual-editing/inline-editor/) through data attributes without manually adding code throughout the codebase.
+## ⚡ Tech Stack & Architecture
 
-**This is achieved by:**
+This website has been overhauled into an ultra-fast, zero-overhead **static HTML/CSS** site to guarantee instant load times and painless deployment.
 
-1. Adding an annotation property to the content objects at they're loaded (see `src/utils/content.ts`)
-1. When rendering the page, each content sub-object is dynamically matched to the appropriate component. At this point, wrap each component with an annotation, based on the abovementioned content property. See `src/components/components-registry.tsx`.
+- **Frontend Core**: Vanilla HTML5 structure.
+- **Styling Engine**: [Tailwind CSS](https://tailwindcss.com) (compiled dynamically via high-performance CDN configuration).
+- **Typography System**: Google Fonts integrations featuring **Chivo** (display headlines), **Inter** (body copy), and **JetBrains Mono** (telemetry labels).
+- **Design Paradigm**: Wireframe earth-tones (Light Sand `#f3f2ed`) combined with modern CSS glassmorphism (`backdrop-filter`) and premium cell-grid slide-down hover animations.
+- **Assets Engine**: High-resolution local image storage in `/images` configured with relative paths to avoid 404 errors on subpaths.
+- **Deployment**: Automatic Git-based CI/CD via **GitHub Pages** (runs in under 10 seconds with zero-compilation build overhead).
+- **Custom Domain**: Integrated mapped routing to `aventodrones.co.uk` via the root `CNAME` file.
 
-**⚡ Demo:** [auto-annotated-portfolio.netlify.app](https://auto-annotated-portfolio.netlify.app)
+---
 
-## Deploying to Netlify
-
-If you click "Deploy to Netlify" button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/auto-annotated-portfolio)
-
-## Getting Started
-
-The typical development process is to begin by working locally. Clone this repository, then run `npm install` in its root directory.
-
-Run the Next.js development server:
+## 📁 Repository Structure
 
 ```txt
-cd auto-annotated-portfolio
-npm run dev
+├── .github/workflows/nextjs.yml  # Automatic GitHub Pages Deploy Action (Static upload)
+├── images/                       # High-resolution drone assets, logos, and gallery clips
+├── index.html                    # Root Home Page (Stitch Design System "Portfolio" screen)
+├── CNAME                         # Custom Domain configuration (aventodrones.co.uk)
+├── README.md                     # This documentation
+├── .gitignore                    # Ignored local files
+└── renovate.json                 # Automatic dependency updates
 ```
 
-Install the [Netlify visual editor CLI](https://www.npmjs.com/package/@stackbit/cli). Then open a new terminal window in the same project directory and run the Netlify visual editor dev server:
+---
 
-```txt
-npm install -g @stackbit/cli
-stackbit dev
-```
+## 🎨 Integrating Google Stitch Web Pages
 
-This outputs your own Netlify visual editor URL. Open this, register or sign in, and you will be directed to Netlify's visual editor for your new project.
+Because the project is 100% static HTML and CSS, adding new pages designed in **Google Stitch** is incredibly simple:
 
-![Next.js Dev + Netlify visual editor dev](https://assets.stackbit.com/docs/next-dev-stackbit-dev.png)
+1. **Design your page** in Google Stitch.
+2. **Export or curl the raw HTML file**.
+3. **Plop it directly into the repository root** (e.g. `services.html`, `projects.html`, `about.html`).
+4. **Copy any new assets** (images/videos) into the `images/` directory.
+5. **Adjust the image source paths** in the curled HTML to relative local paths (e.g. `images/new_shot.jpg`).
+6. **Commit & Push** your new file to the `main` branch. GitHub Pages will build and publish it instantly!
 
-## Next Steps
+---
 
-Here are a few suggestions on what to do next if you're new to Netlify visual editor:
+## 🛠️ Development & Local Viewing
 
-- Learn [how Netlify visual editor works](https://docs.netlify.com/visual-editor/overview/)
-- Check [Netlify visual editor reference documentation](https://visual-editor-reference.netlify.com/)
+Since the project contains no compilers, bundlers, or package installations, you do not need to run `npm install`.
 
-## Support
-
-If you get stuck along the way, get help in our [support forums](https://answers.netlify.com/).
+- **Double-click `index.html`** to preview the site locally in any browser.
+- Alternatively, run a lightweight live server extension in VS Code for instant reload capabilities.
