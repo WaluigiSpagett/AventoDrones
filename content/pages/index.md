@@ -2,13 +2,6 @@
 type: PageLayout
 title: Home
 colors: colors-b
-backgroundImage:
-  type: BackgroundImage
-  backgroundSize: cover
-  backgroundPosition: center
-  backgroundRepeat: no-repeat
-  opacity: 30
-  url: /images/DJI_20240618125441_0009_D_DRONEPIC.jpg
 sections:
   - type: HeroSection
     elementId: 'hero'
