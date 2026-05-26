@@ -8,7 +8,7 @@ client: ''
 description: ''
 featuredImage:
   type: ImageBlock
-  url: /images/DJI_20240618125958_0020_D_DRONEPIC.jpg
+  url: /images/gallery-3.jpg
   altText: Hilltop Commercial Centre Photoshoot
 media:
   type: ImageBlock

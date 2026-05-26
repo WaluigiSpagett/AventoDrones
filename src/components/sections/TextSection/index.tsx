@@ -37,17 +37,12 @@ function TextBodyVariantA(props) {
         overrides: {
             h3: {
                 component: ({ children }) => (
-                    <h3 className="font-headline-md text-headline-md text-bone-white mb-4 mt-8">{children}</h3>
+                    <h3 className="font-headline-md text-headline-md text-on-surface mb-4">{children}</h3>
                 )
             },
             p: {
                 component: ({ children }) => (
-                    <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">{children}</p>
-                )
-            },
-            hr: {
-                component: () => (
-                    <div className="border-b border-surface-variant pb-2 mb-6"></div>
+                    <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{children}</p>
                 )
             }
         }
@@ -57,8 +52,8 @@ function TextBodyVariantA(props) {
         <div className="max-w-3xl mx-auto">
             {/* Template telemetry tag & centered header */}
             <div className="text-center mb-16">
-                <span className="font-label-mono text-label-mono text-metallic-gold mb-4 block">[ INFORMATION ]</span>
-                {title && <h2 className="font-headline-lg text-headline-lg text-bone-white">{title}</h2>}
+                <span className="font-label-md text-label-md text-secondary mb-4 block uppercase">[ INFORMATION ]</span>
+                {title && <h2 className="font-headline-lg text-headline-lg text-on-surface">{title}</h2>}
             </div>
 
             {/* Structural FAQ list with custom markdown rendering */}
@@ -66,7 +61,7 @@ function TextBodyVariantA(props) {
                 <div className="space-y-8">
                     {/* Split FAQ text by ### headers and render each as a bordered item */}
                     {text.split(/(?=###\s)/).filter(block => block.trim()).map((block, index) => (
-                        <div key={index} className="border-b border-surface-variant pb-8">
+                        <div key={index} className="border-b border-outline-variant pb-8">
                             <Markdown options={faqOptions}>
                                 {block.trim()}
                             </Markdown>
@@ -78,12 +73,12 @@ function TextBodyVariantA(props) {
             {/* Trailing action block */}
             {actions.length > 0 && (
                 <div className="mt-16 text-center">
-                    <p className="font-label-mono text-label-mono text-secondary mb-6">Need more information?</p>
+                    <p className="font-label-md text-label-md text-on-surface-variant mb-6">Need more information?</p>
                     {actions.map((action, index) => (
                         <Action
                             key={index}
                             {...action}
-                            className="inline-flex items-center justify-center px-6 py-3 bg-surface-container-low border border-surface-variant text-bone-white font-label-caps text-label-caps hover:border-metallic-gold hover:text-metallic-gold transition-colors duration-300"
+                            className="inline-flex items-center justify-center px-6 py-3 bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md uppercase rounded hover:border-secondary hover:text-secondary transition-colors duration-300"
                         />
                     ))}
                 </div>

@@ -10,12 +10,12 @@ export default function FeaturedItemsSection(props) {
     const { type, elementId, colors, title, subtitle, actions = [], items = [], columns = 3, spacingX = 16, spacingY = 16, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
-            <div className="max-w-container-max mx-auto">
+            <div className="max-w-[1440px] mx-auto">
                 {/* Section header with label and description side by side */}
                 <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div>
-                        <span className="font-label-mono text-label-mono text-metallic-gold mb-4 block">[ CAPABILITIES ]</span>
-                        {title && <h2 className="font-headline-lg text-headline-lg text-bone-white">{title}</h2>}
+                        <span className="font-label-md text-label-md text-secondary mb-4 block uppercase">[ CAPABILITIES ]</span>
+                        {title && <h2 className="font-headline-lg text-headline-lg text-on-surface">{title}</h2>}
                     </div>
                     {subtitle && (
                         <p className="font-body-md text-body-md text-on-surface-variant max-w-md">

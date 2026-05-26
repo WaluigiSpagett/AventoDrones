@@ -1,59 +1,50 @@
 import * as React from 'react';
-import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
 
-import { DynamicComponent } from '../../components-registry';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import Section from '../Section';
 import { Action } from '../../atoms';
-import { AnnotatedField } from '@/components/Annotated';
-import { Button, HeroSection, Link } from '@/types';
+import { HeroSection } from '@/types';
 
 export default function Component(props: HeroSection) {
-    const { type, elementId, colors, backgroundSize, title, subtitle, text, media, actions = [], styles = {} } = props;
+    const { type, elementId, colors, backgroundSize, title, subtitle, text, actions = [], styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} backgroundSize={backgroundSize} styles={styles.self}>
-            {/* Background overlays matching template */}
+            {/* Background Image & Overlays matching Stitch template */}
             <div className="absolute inset-0 z-0 image-glow">
-                <div className="absolute inset-0 bg-obsidian/60 z-10 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-obsidian/20 to-obsidian z-10"></div>
+                <div className="absolute inset-0 bg-primary/40 z-10 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-primary/60 z-10"></div>
+                <img
+                    alt="Hero background aerial landscape"
+                    className="w-full h-full object-cover object-center"
+                    src="/images/DJI_20240618125441_0009_D_DRONEPIC.jpg"
+                />
             </div>
-            <div className="flex flex-col items-center justify-center space-y-8 relative z-20 w-full text-center">
-                <div className="w-full">
-                    <HeroBody {...props} />
-                    <HeroActions actions={actions} styles={styles.actions} hasTopMargin={true} />
-                </div>
+            
+            {/* Content centered */}
+            <div className="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mt-24">
+                <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-container-lowest mb-6 tracking-tight">
+                    View your work from<br/>
+                    <span className="text-secondary-fixed italic font-light">another angle</span>
+                </h1>
+                {text && (
+                    <p className="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto mb-10 tracking-wide">
+                        {text}
+                    </p>
+                )}
+                
+                {/* Actions */}
+                <HeroActions actions={actions} />
             </div>
+
             {/* Scroll Indicator */}
             <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-                <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 0" }}>expand_more</span>
+                <span className="material-symbols-outlined text-surface-container-lowest" style={{ fontVariationSettings: "'FILL' 0" }}>expand_more</span>
             </div>
         </Section>
     );
 }
 
-function HeroMedia({ media }) {
-    return <DynamicComponent {...media} />;
-}
-
-function HeroBody(props: HeroSection) {
-    const { title, subtitle, text } = props;
-    return (
-        <div className="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-24">
-            <h1 className="font-display-lg text-display-lg md:text-[80px] leading-[1.1] text-bone-white mb-6 tracking-tight">
-                View your work from<br/>
-                <span className="text-metallic-gold italic font-light">another angle</span>
-            </h1>
-            {text && (
-                <p className="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-10 tracking-wide">
-                    {text}
-                </p>
-            )}
-        </div>
-    );
-}
-
-function HeroActions(props: { actions: (Button | Link)[]; styles: any; hasTopMargin: boolean }) {
+function HeroActions(props: { actions: any[] }) {
     const { actions = [] } = props;
     if (actions.length === 0) {
         return null;
@@ -67,29 +58,14 @@ function HeroActions(props: { actions: (Button | Link)[]; styles: any; hasTopMar
                         key={index}
                         {...action}
                         className={classNames(
-                            "px-8 py-4 font-label-caps text-label-caps transition-colors duration-300 w-full sm:w-auto text-center",
+                            "px-8 py-4 font-label-md text-label-md uppercase rounded transition-colors duration-300 w-full sm:w-auto text-center",
                             isPrimary
-                                ? "bg-metallic-gold text-obsidian hover:bg-bone-white"
-                                : "border border-bone-white text-bone-white hover:border-metallic-gold hover:text-metallic-gold glass-panel"
+                                ? "bg-secondary text-on-secondary hover:bg-surface-container-lowest hover:text-on-surface"
+                                : "border border-surface-container-lowest text-surface-container-lowest hover:border-secondary-fixed hover:text-secondary-fixed glass-panel"
                         )}
                     />
                 );
             })}
         </div>
     );
-}
-
-function mapFlexDirectionStyles(flexDirection?: 'row' | 'row-reverse' | 'col' | 'col-reverse') {
-    switch (flexDirection) {
-        case 'row':
-            return ['flex-col', 'lg:flex-row'];
-        case 'row-reverse':
-            return ['flex-col-reverse', 'lg:flex-row-reverse'];
-        case 'col':
-            return ['flex-col'];
-        case 'col-reverse':
-            return ['flex-col-reverse'];
-        default:
-            return null;
-    }
 }

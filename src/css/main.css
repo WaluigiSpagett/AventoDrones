@@ -7,8 +7,8 @@
 @layer base {
     body {
         @apply flex flex-col min-h-screen antialiased;
-        background-color: #131313;
-        color: #e2e2e2;
+        background-color: #f3f2ed;
+        color: #1a1c1c;
     }
     body > div,
     .sb-page,
@@ -304,28 +304,28 @@
         }
     }
     .colors-b {
-        background-color: #131313;
-        color: #e2e2e2;
+        background-color: #f3f2ed;
+        color: #1a1c1c;
         .sb-input,
         .sb-select,
         .sb-textarea {
-            color: #e2e2e2;
+            color: #1a1c1c;
             &::placeholder {
-                color: #d0c5af;
+                color: #75777a;
             }
         }
         .sb-component-link-fill:before,
         .sb-component-social-fill:before,
         .sb-header-logo:before {
-            background-color: #e2e2e2;
+            background-color: #1a1c1c;
         }
         .sb-component-link-fill:hover,
         .sb-component-social-fill:hover,
         .sb-header-logo:hover {
-            color: #131313;
+            color: #f3f2ed;
         }
         .sb-header-overlay {
-            background-color: #131313;
+            background-color: #f3f2ed;
         }
     }
     .colors-c {
@@ -398,7 +398,7 @@
 
 /* Glassmorphism utility */
 .glass-panel {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
@@ -408,127 +408,20 @@
     content: '';
     position: absolute;
     inset: 0;
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
     pointer-events: none;
 }
 
-/* Custom scrollbar for dark theme */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #f9f9f9;
 }
 ::-webkit-scrollbar-thumb {
-    background: #353535;
+    background: #c5c6ca;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #4d4635;
-}
-
-/* Custom premium overrides to match raw HTML template aesthetics */
-
-/* Hero section dark overlay with high-contrast white text */
-.sb-component-hero-section {
-    background-color: rgba(0, 0, 0, 0.55) !important;
-    color: #F9F6EE !important;
-
-    h2.h1, h2, p, .sb-markdown {
-        color: #F9F6EE !important;
-    }
-
-    .text-secondary {
-        color: #c9c6bf !important;
-    }
-
-    /* Hero primary gold button */
-    .sb-component-button-primary {
-        background-color: #D4AF37 !important;
-        border-color: #D4AF37 !important;
-        color: #000000 !important;
-    }
-    .sb-component-button-primary:hover {
-        background-color: #F9F6EE !important;
-        border-color: #F9F6EE !important;
-        color: #000000 !important;
-    }
-
-    /* Hollow glass-panel button styling */
-    .sb-component-button-secondary {
-        border-color: #F9F6EE !important;
-        color: #F9F6EE !important;
-        background-color: rgba(0, 0, 0, 0.4) !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-    }
-    .sb-component-button-secondary:hover {
-        border-color: #D4AF37 !important;
-        color: #D4AF37 !important;
-        background-color: transparent !important;
-    }
-}
-
-/* Services section: border-bottom and text color */
-.sb-component-featured-items-section {
-    border-bottom: 1px solid rgba(42, 42, 42, 0.5);
-    color: #e2e2e2 !important;
-    h2, p {
-        color: #e2e2e2 !important;
-    }
-}
-
-/* Portfolio Section: text color */
-.sb-component-featured-projects-section {
-    color: #e2e2e2 !important;
-    h2, p {
-        color: #e2e2e2 !important;
-    }
-}
-
-/* FAQ section: border-top and text color */
-.sb-component-text-section {
-    border-top: 1px solid #353535;
-    color: #e2e2e2 !important;
-    h2, h3, p {
-        color: #e2e2e2 !important;
-    }
-}
-
-/* Quote section: text color */
-.sb-component-quote-section {
-    color: #e2e2e2 !important;
-    h2, p, blockquote, span {
-        color: #e2e2e2 !important;
-    }
-}
-
-/* Footer Section: border-top and text color */
-.sb-component-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #e2e2e2 !important;
-    a, p, span {
-        color: #d0c5af !important;
-    }
-    a:hover {
-        color: #F9F6EE !important;
-    }
-}
-
-/* Fixed Header Color Transitions */
-header.sb-component-header:not(.scrolled) {
-    .sb-component-link, .sb-component-social, .sb-header-logo, span {
-        color: #F9F6EE !important;
-    }
-    .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
-        color: #D4AF37 !important;
-    }
-}
-
-header.scrolled {
-    .sb-component-link, .sb-component-social, .sb-header-logo, span {
-        color: #131313 !important;
-    }
-    .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
-        color: #D4AF37 !important;
-    }
+    background: #75777a;
 }

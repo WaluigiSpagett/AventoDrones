@@ -3,23 +3,18 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
-import { Link, Action, Social } from '../../atoms';
+import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
 
 export default function Header(props) {
-    const { headerVariant, isSticky, title, isTitleVisible, logo, primaryLinks = [], socialLinks = [], styles = {} } = props;
-    const headerWidth = styles.self?.width ?? 'narrow';
+    const { headerVariant, title, isTitleVisible, logo, primaryLinks = [], styles = {} } = props;
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 50);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -28,122 +23,52 @@ export default function Header(props) {
     return (
         <header
             className={classNames(
-                'sb-component',
-                'sb-component-header',
-                'fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-transparent',
-                isScrolled
-                    ? 'bg-white shadow-sm text-dark scrolled border-outline-variant/30'
-                    : 'bg-transparent text-white'
+                'fixed top-0 w-full z-50 transition-all duration-300 ease-in-out group bg-transparent',
+                isScrolled ? 'bg-surface-container-lowest shadow-sm scrolled' : '',
+                'hover:bg-surface-container-lowest hover:shadow-sm'
             )}
         >
-            <div
-                className={classNames('mx-auto', mapMaxWidthStyles(headerWidth), {
-                    'xl:border-l xl:border-r border-white/20': headerWidth === 'narrow' && !isScrolled,
-                    'xl:border-l xl:border-r border-outline-variant/30': headerWidth === 'narrow' && isScrolled,
-                    '2xl:border-l 2xl:border-r border-white/20': headerWidth === 'wide' && !isScrolled,
-                    '2xl:border-l 2xl:border-r border-outline-variant/30': headerWidth === 'wide' && isScrolled
-                })}
-            >
-                <Link href="#main" className="sr-only">
-                    Skip to main content
-                </Link>
-                <HeaderVariants
-                    variant={headerVariant}
-                    title={title}
-                    isTitleVisible={isTitleVisible}
-                    logo={logo}
-                    primaryLinks={primaryLinks}
-                    socialLinks={socialLinks}
-                />
-            </div>
+            <HeaderVariants
+                variant={headerVariant}
+                title={title}
+                isTitleVisible={isTitleVisible}
+                logo={logo}
+                primaryLinks={primaryLinks}
+            />
         </header>
     );
 }
 
 function HeaderVariants(props) {
-    const { variant = 'variant-a', ...rest } = props;
-    switch (variant) {
-        case 'variant-a':
-            return <HeaderVariantA {...rest} />;
-        case 'variant-b':
-            return <HeaderVariantB {...rest} />;
-        case 'variant-c':
-            return <HeaderVariantC {...rest} />;
-        default:
-            return null;
-    }
+    // Recreate the page design using the single premier Stitch Header Layout
+    return <HeaderVariantStitch {...props} />;
 }
 
-function HeaderVariantA(props) {
-    const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
+function HeaderVariantStitch(props) {
+    const { primaryLinks = [], ...logoProps } = props;
     return (
-        <div className="flex items-stretch relative">
+        <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1440px] mx-auto">
             <SiteLogoLink {...logoProps} />
             {primaryLinks.length > 0 && (
-                <ul className="hidden lg:flex divide-x divide-current border-r border-current">
+                <nav className="hidden md:flex items-center gap-8">
                     <ListOfLinks links={primaryLinks} inMobileMenu={false} />
-                </ul>
+                </nav>
             )}
-            {socialLinks.length > 0 && (
-                <ul className="hidden lg:flex border-l border-current ml-auto">
-                    <ListOfSocialLinks links={socialLinks} inMobileMenu={false} />
-                </ul>
-            )}
-            {(primaryLinks.length > 0 || socialLinks.length > 0) && <MobileMenu {...props} />}
-        </div>
-    );
-}
-
-function HeaderVariantB(props) {
-    const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
-    return (
-        <div className="flex items-stretch relative">
-            <SiteLogoLink {...logoProps} />
-            {primaryLinks.length > 0 && (
-                <ul className="hidden lg:flex border-l border-current divide-x divide-current ml-auto">
-                    <ListOfLinks links={primaryLinks} inMobileMenu={false} />
-                </ul>
-            )}
-            {socialLinks.length > 0 && (
-                <ul
-                    className={classNames('hidden', 'lg:flex', 'border-l', 'border-current', {
-                        'ml-auto': primaryLinks.length === 0
-                    })}
+            <div className="hidden md:block">
+                <a
+                    className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-on-secondary font-label-md text-label-md uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300"
+                    href="#contact"
                 >
-                    <ListOfSocialLinks links={socialLinks} inMobileMenu={false} />
-                </ul>
-            )}
-            {(primaryLinks.length > 0 || socialLinks.length > 0) && <MobileMenu {...props} />}
-        </div>
-    );
-}
-
-function HeaderVariantC(props) {
-    const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
-    return (
-        <div className="flex items-stretch relative">
-            <SiteLogoLink {...logoProps} />
-            {socialLinks.length > 0 && (
-                <ul className="hidden lg:flex border-l border-current ml-auto">
-                    <ListOfSocialLinks links={socialLinks} inMobileMenu={false} />
-                </ul>
-            )}
-            {primaryLinks.length > 0 && (
-                <ul
-                    className={classNames('hidden', 'lg:flex', 'border-l', 'border-current', 'divide-x', 'divide-current', {
-                        'ml-auto': primaryLinks.length === 0
-                    })}
-                >
-                    <ListOfLinks links={primaryLinks} inMobileMenu={false} />
-                </ul>
-            )}
-            {(primaryLinks.length > 0 || socialLinks.length > 0) && <MobileMenu {...props} />}
+                    BOOK SHOOT
+                </a>
+            </div>
+            {(primaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
 }
 
 function MobileMenu(props) {
-    const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
+    const { primaryLinks = [], ...logoProps } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
 
@@ -152,40 +77,48 @@ function MobileMenu(props) {
             setIsMenuOpen(false);
         };
         router.events.on('routeChangeStart', handleRouteChange);
-
         return () => {
             router.events.off('routeChangeStart', handleRouteChange);
         };
     }, [router.events]);
 
     return (
-        <div className="ml-auto lg:hidden">
-            <button aria-label="Open Menu" className="border-l border-current h-10 min-h-full p-4 focus:outline-none" onClick={() => setIsMenuOpen(true)}>
+        <div className="ml-auto md:hidden">
+            <button
+                aria-label="Open Menu"
+                className="p-2 focus:outline-none text-surface-container-lowest group-hover:text-on-surface group-[.scrolled]:text-on-surface hover:!text-secondary transition-colors duration-300 flex items-center"
+                onClick={() => setIsMenuOpen(true)}
+            >
                 <span className="sr-only">Open Menu</span>
                 <MenuIcon className="fill-current h-6 w-6" />
             </button>
-            <div className={classNames('sb-header-overlay', 'fixed', 'inset-0', 'overflow-y-auto', 'z-20', isMenuOpen ? 'block' : 'hidden')}>
-                <div className="flex flex-col min-h-full">
-                    <div className="border-b border-current flex items-stretch justify-between">
+            <div className={classNames('sb-header-overlay', 'fixed', 'inset-0', 'overflow-y-auto', 'z-50', isMenuOpen ? 'block' : 'hidden')}>
+                <div className="flex flex-col min-h-full bg-surface-container">
+                    <div className="border-b border-outline-variant flex items-center justify-between px-margin-mobile py-6">
                         <SiteLogoLink {...logoProps} />
-                        <div className="border-l border-current">
-                            <button aria-label="Close Menu" className="h-10 min-h-full p-4 focus:outline-none" onClick={() => setIsMenuOpen(false)}>
+                        <div>
+                            <button
+                                aria-label="Close Menu"
+                                className="p-2 focus:outline-none text-on-surface hover:text-secondary flex items-center"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
                                 <CloseIcon className="fill-current h-6 w-6" />
                             </button>
                         </div>
                     </div>
-                    {(primaryLinks.length > 0 || socialLinks.length > 0) && (
-                        <div className="flex flex-col justify-center grow px-4 py-20 space-y-12">
-                            {primaryLinks.length > 0 && (
-                                <ul className="space-y-6">
-                                    <ListOfLinks links={primaryLinks} inMobileMenu={true} />
-                                </ul>
-                            )}
-                            {socialLinks.length > 0 && (
-                                <ul className="flex flex-wrap justify-center">
-                                    <ListOfSocialLinks links={socialLinks} inMobileMenu={true} />
-                                </ul>
-                            )}
+                    {primaryLinks.length > 0 && (
+                        <div className="flex flex-col justify-center grow px-margin-mobile py-20 space-y-12">
+                            <ul className="space-y-6">
+                                <ListOfLinks links={primaryLinks} inMobileMenu={true} />
+                            </ul>
+                            <div className="pt-6">
+                                <a
+                                    className="inline-flex items-center justify-center w-full py-4 bg-secondary text-on-secondary font-label-md text-label-md uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300"
+                                    href="#contact"
+                                >
+                                    BOOK SHOOT
+                                </a>
+                            </div>
                         </div>
                     )}
                 </div>
@@ -199,43 +132,40 @@ function SiteLogoLink({ title, isTitleVisible, logo }) {
         return null;
     }
     return (
-        <div className="border-r border-current flex items-center">
-            <Link href="/" className="sb-header-logo flex items-center h-full p-4">
-                {logo && <ImageBlock {...logo} className={classNames('max-h-12', { 'mr-2': isTitleVisible })} />}
-                {title && isTitleVisible && <span className="text-base tracking-widest uppercase">{title}</span>}
+        <div className="flex items-center">
+            <Link href="/" className="flex items-center gap-4 group/brand">
+                {logo && (
+                    <ImageBlock
+                        {...logo}
+                        className="h-10 w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-all duration-300 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-[.scrolled]:brightness-100 group-[.scrolled]:invert-0"
+                    />
+                )}
+                {title && isTitleVisible && (
+                    <span className="font-headline-md text-headline-md font-semibold tracking-widest text-surface-container-lowest group-hover:text-on-surface group-[.scrolled]:text-on-surface transition-colors duration-300 uppercase">
+                        {title}
+                    </span>
+                )}
             </Link>
         </div>
     );
 }
 
 function ListOfLinks({ links, inMobileMenu }) {
-    return links.map((link, index) => (
-        <li key={index} className={classNames(inMobileMenu ? 'text-center w-full' : 'inline-flex items-stretch')}>
-            <Action
-                {...link}
-                className={classNames(inMobileMenu ? 'text-xl' : 'sb-component-link-fill p-4', 'font-mono', 'text-sm', 'tracking-wider', 'uppercase')}
-            />
-        </li>
-    ));
-}
-
-function ListOfSocialLinks({ links, inMobileMenu = false }) {
-    return links.map((link, index) => (
-        <li key={index} className={classNames(inMobileMenu ? 'border border-current -ml-px -mt-px' : 'inline-flex items-stretch')}>
-            <Social {...link} className={classNames('sb-component-social-fill', 'text-base', inMobileMenu ? 'p-5' : 'p-4')} />
-        </li>
-    ));
-}
-
-function mapMaxWidthStyles(width) {
-    switch (width) {
-        case 'narrow':
-            return 'max-w-7xl';
-        case 'wide':
-            return 'max-w-screen-2xl';
-        case 'full':
-            return 'max-w-full';
-        default:
-            return null;
-    }
+    return links.map((link, index) => {
+        const isActive = link.label === 'Portfolio' || link.label === 'Projects';
+        return (
+            <li key={index} className={classNames(inMobileMenu ? 'text-center w-full' : 'inline-flex items-center')}>
+                <Action
+                    {...link}
+                    className={classNames(
+                        "font-label-md text-label-md uppercase transition-all duration-300 ease-in-out",
+                        isActive
+                            ? "text-secondary border-b-2 border-secondary pb-1"
+                            : "text-surface-container-lowest group-hover:text-on-surface-variant group-[.scrolled]:text-on-surface-variant hover:!text-secondary",
+                        inMobileMenu ? "text-2xl text-on-surface" : ""
+                    )}
+                />
+            </li>
+        );
+    });
 }
