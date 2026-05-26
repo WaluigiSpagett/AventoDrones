@@ -28,9 +28,9 @@
                 "tertiary": "#000103",
                 "on-surface": "#1a1c1c",
                 "outline": "#75777a",
-                "on-secondary": "#ffffff",
+                "on-secondary": "#1a1c1c",
                 "on-primary-fixed-variant": "#454749",
-                "secondary": "#735c00",
+                "secondary": "#D4AF37",
                 "error-container": "#ffdad6",
                 "tertiary-fixed": "#dde3ea",
                 "outline-variant": "#c5c6ca",
@@ -192,11 +192,11 @@
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary selection:text-on-secondary">
 <!-- TopNavBar Component -->
-<header class="fixed top-0 w-full z-50 bg-transparent hover:bg-surface-container-lowest transition-all duration-300 ease-in-out group">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1440px] mx-auto">
+<header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-white/20 hover:border-outline-variant/30 hover:bg-surface-container-lowest group bg-transparent group-[.scrolled]:bg-surface-container-lowest group-[.scrolled]:border-outline-variant/30 group-[.scrolled]:shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1440px] mx-auto md:border-l md:border-r border-white/20 group-hover:border-outline-variant/30 group-[.scrolled]:border-outline-variant/30 transition-all duration-300">
 <!-- Brand -->
 <a class="flex items-center gap-4 group/brand" href="/">
-<img alt="Avento Drones Logo" class="h-10 w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-[.scrolled]:brightness-100 group-[.scrolled]:invert-0" src="images/square logo real.png"/>
+<img alt="Avento Drones Logo" class="h-10 w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity" src="images/square logo real.png"/>
 <span class="font-headline-md text-headline-md tracking-widest text-surface-container-lowest group-hover:text-on-surface group-[.scrolled]:text-on-surface transition-colors duration-300 uppercase">AVENTO DRONES</span>
 </a>
 <!-- Navigation Links (Desktop) -->
@@ -209,7 +209,7 @@
 </nav>
 <!-- Trailing Action -->
 <div class="hidden md:block">
-<a class="inline-flex items-center justify-center px-6 py-3 bg-secondary text-on-secondary font-label-md text-label-md uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300" href="#contact">
+<a class="inline-flex items-center justify-center px-6 py-3 font-label-md text-label-md uppercase rounded transition-all duration-300 border border-white/40 text-white hover:bg-secondary hover:text-on-secondary hover:border-secondary group-hover:border-outline group-hover:text-on-surface-variant group-[.scrolled]:bg-secondary group-[.scrolled]:text-on-secondary group-[.scrolled]:border-secondary group-[.scrolled]:hover:bg-on-surface group-[.scrolled]:hover:text-surface-container-lowest group-[.scrolled]:hover:border-on-surface" href="#contact">
                     BOOK SHOOT
                 </a>
 </div>
