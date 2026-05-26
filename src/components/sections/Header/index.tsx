@@ -15,7 +15,11 @@ export default function Header(props) {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -26,17 +30,19 @@ export default function Header(props) {
             className={classNames(
                 'sb-component',
                 'sb-component-header',
-                'fixed top-0 w-full z-50 transition-all duration-300 ease-in-out',
+                'fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-transparent',
                 isScrolled
-                    ? 'bg-obsidian/80 backdrop-blur-md border-b border-white/10 shadow-sm scrolled'
-                    : 'bg-obsidian/40 border-b border-transparent'
+                    ? 'bg-white shadow-sm text-dark scrolled border-outline-variant/30'
+                    : 'bg-transparent text-white'
             )}
         >
             <div
-                className={classNames(
-                    'mx-auto px-margin-mobile md:px-margin-desktop',
-                    mapMaxWidthStyles(headerWidth)
-                )}
+                className={classNames('mx-auto', mapMaxWidthStyles(headerWidth), {
+                    'xl:border-l xl:border-r border-white/20': headerWidth === 'narrow' && !isScrolled,
+                    'xl:border-l xl:border-r border-outline-variant/30': headerWidth === 'narrow' && isScrolled,
+                    '2xl:border-l 2xl:border-r border-white/20': headerWidth === 'wide' && !isScrolled,
+                    '2xl:border-l 2xl:border-r border-outline-variant/30': headerWidth === 'wide' && isScrolled
+                })}
             >
                 <Link href="#main" className="sr-only">
                     Skip to main content
@@ -71,22 +77,19 @@ function HeaderVariants(props) {
 function HeaderVariantA(props) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
-        <div className="flex justify-between items-center w-full py-4">
+        <div className="flex items-stretch relative">
             <SiteLogoLink {...logoProps} />
             {primaryLinks.length > 0 && (
-                <nav className="hidden md:flex items-center gap-8">
+                <ul className="hidden lg:flex divide-x divide-current border-r border-current">
                     <ListOfLinks links={primaryLinks} inMobileMenu={false} />
-                </nav>
+                </ul>
             )}
-            <div className="hidden md:block">
-                <a
-                    className="inline-flex items-center justify-center px-6 py-3 bg-metallic-gold text-obsidian font-label-caps text-label-caps hover:bg-bone-white transition-colors duration-300"
-                    href="#contact"
-                >
-                    BOOK SHOOT
-                </a>
-            </div>
-            {(primaryLinks.length > 0) && <MobileMenu {...props} />}
+            {socialLinks.length > 0 && (
+                <ul className="hidden lg:flex border-l border-current ml-auto">
+                    <ListOfSocialLinks links={socialLinks} inMobileMenu={false} />
+                </ul>
+            )}
+            {(primaryLinks.length > 0 || socialLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
 }
@@ -157,22 +160,22 @@ function MobileMenu(props) {
 
     return (
         <div className="ml-auto lg:hidden">
-            <button aria-label="Open Menu" className="h-10 min-h-full p-4 focus:outline-none text-bone-white hover:text-metallic-gold" onClick={() => setIsMenuOpen(true)}>
+            <button aria-label="Open Menu" className="border-l border-current h-10 min-h-full p-4 focus:outline-none" onClick={() => setIsMenuOpen(true)}>
                 <span className="sr-only">Open Menu</span>
                 <MenuIcon className="fill-current h-6 w-6" />
             </button>
             <div className={classNames('sb-header-overlay', 'fixed', 'inset-0', 'overflow-y-auto', 'z-20', isMenuOpen ? 'block' : 'hidden')}>
-                <div className="flex flex-col min-h-full bg-obsidian">
-                    <div className="border-b border-surface-variant flex items-stretch justify-between px-margin-mobile py-4">
+                <div className="flex flex-col min-h-full">
+                    <div className="border-b border-current flex items-stretch justify-between">
                         <SiteLogoLink {...logoProps} />
-                        <div>
-                            <button aria-label="Close Menu" className="h-10 min-h-full p-4 focus:outline-none text-bone-white" onClick={() => setIsMenuOpen(false)}>
+                        <div className="border-l border-current">
+                            <button aria-label="Close Menu" className="h-10 min-h-full p-4 focus:outline-none" onClick={() => setIsMenuOpen(false)}>
                                 <CloseIcon className="fill-current h-6 w-6" />
                             </button>
                         </div>
                     </div>
                     {(primaryLinks.length > 0 || socialLinks.length > 0) && (
-                        <div className="flex flex-col justify-center grow px-margin-mobile py-20 space-y-12">
+                        <div className="flex flex-col justify-center grow px-4 py-20 space-y-12">
                             {primaryLinks.length > 0 && (
                                 <ul className="space-y-6">
                                     <ListOfLinks links={primaryLinks} inMobileMenu={true} />
@@ -191,38 +194,29 @@ function MobileMenu(props) {
     );
 }
 
-function SiteLogoLink({ title, logo }) {
+function SiteLogoLink({ title, isTitleVisible, logo }) {
+    if (!(logo || (title && isTitleVisible))) {
+        return null;
+    }
     return (
-        <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-4 group/brand">
-                {logo && <ImageBlock {...logo} className="h-10 w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity" />}
-                {title && (
-                    <span className="font-headline-md text-headline-md font-light tracking-widest text-bone-white uppercase">
-                        {title}
-                    </span>
-                )}
+        <div className="border-r border-current flex items-center">
+            <Link href="/" className="sb-header-logo flex items-center h-full p-4">
+                {logo && <ImageBlock {...logo} className={classNames('max-h-12', { 'mr-2': isTitleVisible })} />}
+                {title && isTitleVisible && <span className="text-base tracking-widest uppercase">{title}</span>}
             </Link>
         </div>
     );
 }
 
 function ListOfLinks({ links, inMobileMenu }) {
-    return links.map((link, index) => {
-        const isActive = link.label === 'Portfolio';
-        return (
+    return links.map((link, index) => (
+        <li key={index} className={classNames(inMobileMenu ? 'text-center w-full' : 'inline-flex items-stretch')}>
             <Action
-                key={index}
                 {...link}
-                className={classNames(
-                    "font-label-caps text-label-caps uppercase transition-all duration-300 ease-in-out",
-                    isActive
-                        ? "text-metallic-gold border-b-2 border-metallic-gold pb-1"
-                        : "text-bone-white hover:text-metallic-gold",
-                    inMobileMenu ? "text-2xl" : ""
-                )}
+                className={classNames(inMobileMenu ? 'text-xl' : 'sb-component-link-fill p-4', 'font-mono', 'text-sm', 'tracking-wider', 'uppercase')}
             />
-        );
-    });
+        </li>
+    ));
 }
 
 function ListOfSocialLinks({ links, inMobileMenu = false }) {
@@ -236,7 +230,7 @@ function ListOfSocialLinks({ links, inMobileMenu = false }) {
 function mapMaxWidthStyles(width) {
     switch (width) {
         case 'narrow':
-            return 'max-w-container-max';
+            return 'max-w-7xl';
         case 'wide':
             return 'max-w-screen-2xl';
         case 'full':

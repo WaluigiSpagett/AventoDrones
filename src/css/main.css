@@ -468,9 +468,8 @@
     }
 }
 
-/* Services section: obsidian background with border-bottom */
+/* Services section: border-bottom and text color */
 .sb-component-featured-items-section {
-    background-color: #000000 !important;
     border-bottom: 1px solid rgba(42, 42, 42, 0.5);
     color: #e2e2e2 !important;
     h2, p {
@@ -478,18 +477,16 @@
     }
 }
 
-/* Portfolio Section: obsidian background */
+/* Portfolio Section: text color */
 .sb-component-featured-projects-section {
-    background-color: #000000 !important;
     color: #e2e2e2 !important;
     h2, p {
         color: #e2e2e2 !important;
     }
 }
 
-/* FAQ section: dark surface-container-lowest  */
+/* FAQ section: border-top and text color */
 .sb-component-text-section {
-    background-color: #0e0e0e !important;
     border-top: 1px solid #353535;
     color: #e2e2e2 !important;
     h2, h3, p {
@@ -497,18 +494,16 @@
     }
 }
 
-/* Quote section: dark */
+/* Quote section: text color */
 .sb-component-quote-section {
-    background-color: #131313 !important;
     color: #e2e2e2 !important;
     h2, p, blockquote, span {
         color: #e2e2e2 !important;
     }
 }
 
-/* Footer Section: obsidian background */
+/* Footer Section: border-top and text color */
 .sb-component-footer {
-    background-color: #000000 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #e2e2e2 !important;
     a, p, span {
@@ -521,7 +516,7 @@
 
 /* Fixed Header Color Transitions */
 header.sb-component-header:not(.scrolled) {
-    .sb-component-link, .sb-component-social, .sb-header-logo, span, a {
+    .sb-component-link, .sb-component-social, .sb-header-logo, span {
         color: #F9F6EE !important;
     }
     .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
@@ -530,13 +525,8 @@ header.sb-component-header:not(.scrolled) {
 }
 
 header.scrolled {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-
-    .sb-component-link, .sb-component-social, .sb-header-logo, span, a {
-        color: #F9F6EE !important;
+    .sb-component-link, .sb-component-social, .sb-header-logo, span {
+        color: #131313 !important;
     }
     .sb-component-link:hover, .sb-component-social:hover, .sb-header-logo:hover {
         color: #D4AF37 !important;
