@@ -1,20 +1,17 @@
 # Avento Drones | Aerial Cinematography & UAV Photography
 
-Welcome to the official repository for **Avento Drones**, a premium, high-performance static website for professional UAV photography and aerial cinematography services based in the UK.
+Welcome to the official repository for **Avento Drones**, a premium, high-performance website for professional UAV photography and aerial cinematography services based in the UK.
 
 ---
 
 ## ⚡ Tech Stack & Architecture
 
-This website has been overhauled into an ultra-fast, zero-overhead **static HTML/CSS** site to guarantee instant load times and painless deployment.
-
-- **Frontend Core**: Vanilla HTML5 structure.
-- **Styling Engine**: [Tailwind CSS](https://tailwindcss.com) (compiled dynamically via high-performance CDN configuration).
-- **Typography System**: Google Fonts integrations featuring **Chivo** (display headlines), **Inter** (body copy), and **JetBrains Mono** (telemetry labels).
-- **Design Paradigm**: Wireframe earth-tones (Light Sand `#f3f2ed`) combined with modern CSS glassmorphism (`backdrop-filter`) and premium cell-grid slide-down hover animations.
-- **Assets Engine**: High-resolution local image storage in `/images` configured with relative paths to avoid 404 errors on subpaths.
-- **Deployment**: Automatic Git-based CI/CD via **GitHub Pages** (runs in under 10 seconds with zero-compilation build overhead).
-- **Custom Domain**: Integrated mapped routing to `aventodrones.co.uk` via the root `CNAME` file.
+- **Frontend Core**: Semantic HTML5 structure with responsive multi-page architecture (`index.html`, `pricing.html`).
+- **Styling Engine**: [Tailwind CSS](https://tailwindcss.com) combined with custom glassmorphic utilities and earthy design system tokens (`#f3f2ed` sand background, `#D4AF37` gold accent).
+- **Typography & Icons**: Google Fonts (**Chivo** display headlines, **Inter** body copy, **JetBrains Mono** telemetry labels) & Google Material Symbols.
+- **Interactivity**: Lightweight Vanilla JS powering responsive mobile drawer navigation, sticky scroll transitions, accessible keyboard shortcuts, and interactive booking inquiries.
+- **Asset Optimization**: High-performance `.webp` image assets in `/images` configured with lazy loading (`loading="lazy"`) to maximize LCP and page speed.
+- **Deployment**: Automated Git-based CI/CD via **GitHub Pages** with custom domain routing to `aventodrones.co.uk` via root `CNAME`.
 
 ---
 
@@ -22,32 +19,32 @@ This website has been overhauled into an ultra-fast, zero-overhead **static HTML
 
 ```txt
 ├── .github/workflows/nextjs.yml  # Automatic GitHub Pages Deploy Action (Static upload)
-├── images/                       # High-resolution drone assets, logos, and gallery clips
-├── index.html                    # Root Home Page (Stitch Design System "Portfolio" screen)
+├── images/                       # Optimized WebP assets, logos, and high-res imagery
+├── index.html                    # Root Home Page (Hero, Services, Portfolio, Projects, About, Booking Form)
+├── pricing.html                  # Services & Transparent Pricing Page
 ├── CNAME                         # Custom Domain configuration (aventodrones.co.uk)
-├── README.md                     # This documentation
-├── .gitignore                    # Ignored local files
+├── README.md                     # Documentation
 └── renovate.json                 # Automatic dependency updates
 ```
 
 ---
 
-## 🎨 Integrating Google Stitch Web Pages
+## 🎨 Key Features & Navigation
 
-Because the project is 100% static HTML and CSS, adding new pages designed in **Google Stitch** is incredibly simple:
-
-1. **Design your page** in Google Stitch.
-2. **Export or curl the raw HTML file**.
-3. **Plop it directly into the repository root** (e.g. `services.html`, `projects.html`, `about.html`).
-4. **Copy any new assets** (images/videos) into the `images/` directory.
-5. **Adjust the image source paths** in the curled HTML to relative local paths (e.g. `images/new_shot.jpg`).
-6. **Commit & Push** your new file to the `main` branch. GitHub Pages will build and publish it instantly!
+1. **Mobile Drawer Navigation**: Slide-out responsive mobile navigation menu with backdrop blur and keyboard accessibility (`Esc` key close).
+2. **Interactive Mission Booking Form**: Fully styled glassmorphism contact form at `#contact` for instant booking inquiries.
+3. **Comprehensive Page Sections**:
+   - `[ CAPABILITIES ]` Precision Services pricing cards.
+   - `[ SELECTED WORKS ]` Bento grid project gallery.
+   - `[ CASE STUDIES ]` Featured missions breakdown (`#projects`).
+   - `[ OPERATOR CREDENTIALS ]` CAA Certification & safety credentials (`#about`).
+   - `[ GET IN TOUCH ]` Interactive mission booking form (`#contact`).
 
 ---
 
-## 🛠️ Development & Local Viewing
+## 🛠️ Local Development
 
-Since the project contains no compilers, bundlers, or package installations, you do not need to run `npm install`.
+Since the website is static HTML5/CSS, no build process or package installation is required:
 
-- **Double-click `index.html`** to preview the site locally in any browser.
-- Alternatively, run a lightweight live server extension in VS Code for instant reload capabilities.
+- Open `index.html` directly in any web browser.
+- Or launch a local live server (e.g. VS Code Live Server or Python `python3 -m http.server 8000`).
