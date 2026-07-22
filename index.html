@@ -111,7 +111,6 @@
   }
 </script>
 <style>
-  /* Base Glassmorphism utilities */
   .glass-panel {
       background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(20px);
@@ -122,7 +121,6 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
   }
-  /* Inner glow for imagery */
   .image-glow::after {
       content: '';
       position: absolute;
@@ -130,7 +128,6 @@
       box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
       pointer-events: none;
   }
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
       width: 8px;
   }
@@ -150,54 +147,45 @@
 <!-- TopNavBar Component -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-white/20 hover:border-outline-variant/30 group bg-transparent [&.scrolled]:bg-white/95 [&.scrolled]:backdrop-blur-md [&.scrolled]:border-outline-variant/30 [&.scrolled]:shadow-sm h-20">
 <div class="flex justify-between items-stretch w-full mx-auto transition-all duration-300 h-full">
-<!-- Brand Cell -->
 <a class="flex items-center gap-4 px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 transition-colors duration-300 relative overflow-hidden group/cell h-full text-surface-container-lowest group-hover/cell:text-black group-[.scrolled]:text-black group-[.scrolled]:group-hover/cell:text-secondary" href="index.html">
   <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
   <img alt="Avento Drones Logo" class="h-10 w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity relative z-10" src="images/square logo real.png"/>
   <span class="font-headline-md text-headline-md tracking-widest transition-colors duration-300 uppercase relative z-10">AVENTO DRONES</span>
 </a>
-<!-- Navigation Links & Trailing Action (Desktop Grid) -->
 <div class="hidden md:flex items-stretch h-full">
   <nav class="flex items-stretch h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30 transition-colors duration-300">
-    <!-- Portfolio Link Cell -->
     <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 relative overflow-hidden group/cell text-surface-container-lowest group-hover/cell:text-black group-[.scrolled]:text-black group-[.scrolled]:group-hover/cell:text-secondary transition-all duration-300 uppercase font-label-md text-label-md" href="portfolio.html">
       <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
       <span class="relative z-10">PORTFOLIO</span>
     </a>
-    <!-- Services Link Cell -->
     <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 relative overflow-hidden group/cell text-surface-container-lowest group-hover/cell:text-black group-[.scrolled]:text-black group-[.scrolled]:group-hover/cell:text-secondary transition-all duration-300 uppercase font-label-md text-label-md" href="pricing.html">
       <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
       <span class="relative z-10">SERVICES</span>
     </a>
-    <!-- About Link Cell -->
     <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 relative overflow-hidden group/cell text-surface-container-lowest group-hover/cell:text-black group-[.scrolled]:text-black group-[.scrolled]:group-hover/cell:text-secondary transition-all duration-300 uppercase font-label-md text-label-md" href="#about">
       <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
       <span class="relative z-10">ABOUT</span>
     </a>
-    <!-- Contact Link Cell -->
     <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 relative overflow-hidden group/cell text-surface-container-lowest group-hover/cell:text-black group-[.scrolled]:text-black group-[.scrolled]:group-hover/cell:text-secondary transition-all duration-300 uppercase font-label-md text-label-md" href="#contact">
       <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
       <span class="relative z-10">CONTACT</span>
     </a>
   </nav>
-  <!-- BOOK SHOOT Cell -->
   <a class="flex items-center h-full px-8 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 relative overflow-hidden group/cell text-surface-container-lowest group-hover/cell:text-black group-[.scrolled]:text-black group-[.scrolled]:group-hover/cell:text-secondary transition-all duration-300 uppercase font-label-md text-label-md font-medium" href="#contact">
     <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
     <span class="relative z-10">BOOK SHOOT</span>
   </a>
 </div>
-<!-- Mobile Menu Toggle Button -->
 <button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-surface-container-lowest hover:text-secondary group-[.scrolled]:text-black group-[.scrolled]:hover:text-secondary transition-colors duration-300 px-6 flex items-center h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30 focus:outline-none">
   <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 0;">menu</span>
 </button>
 </div>
 </header>
 
-<!-- Mobile Navigation Drawer Overlay & Backdrop -->
+<!-- Mobile Navigation Drawer -->
 <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
 <aside id="mobile-menu" aria-label="Mobile menu" class="fixed top-0 right-0 w-[85%] max-w-sm h-full bg-primary text-surface-container-lowest z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between md:hidden">
   <div>
-    <!-- Mobile Header -->
     <div class="flex items-center justify-between p-6 border-b border-white/10">
       <div class="flex items-center gap-3">
         <img alt="Avento Drones Logo" class="h-8 w-8 object-contain" src="images/square logo real.png"/>
@@ -207,7 +195,6 @@
         <span class="material-symbols-outlined text-2xl">close</span>
       </button>
     </div>
-    <!-- Mobile Nav Links -->
     <nav class="flex flex-col py-6 px-6 space-y-4">
       <a class="mobile-nav-link text-lg font-headline-md tracking-wider uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5 transition-colors" href="portfolio.html">PORTFOLIO SHOWCASE</a>
       <a class="mobile-nav-link text-lg font-headline-md tracking-wider uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5 transition-colors" href="pricing.html">SERVICES & PRICING</a>
@@ -215,7 +202,6 @@
       <a class="mobile-nav-link text-lg font-headline-md tracking-wider uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5 transition-colors" href="#contact">CONTACT</a>
     </nav>
   </div>
-  <!-- Mobile CTA Button -->
   <div class="p-6 border-t border-white/10">
     <a class="mobile-nav-link flex items-center justify-center w-full py-4 bg-secondary text-on-secondary font-label-md uppercase tracking-widest rounded hover:bg-surface-container-lowest transition-colors" href="#contact">
       BOOK SHOOT NOW
@@ -226,13 +212,11 @@
 <main>
 <!-- Hero Section -->
 <section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-<!-- Background Image -->
 <div class="absolute inset-0 z-0 image-glow">
 <div class="absolute inset-0 bg-primary/40 z-10 mix-blend-multiply"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-primary/60 z-10"></div>
 <img alt="Hero background aerial landscape" class="w-full h-full object-cover object-center" src="images/hero-bg.webp"/>
 </div>
-<!-- Content -->
 <div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mt-24">
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-container-lowest mb-6 tracking-tight">
                     View your work from<br/>
@@ -250,7 +234,6 @@
 </a>
 </div>
 </div>
-<!-- Scroll Indicator -->
 <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
 <a aria-label="Scroll down to services" href="#services" class="text-surface-container-lowest hover:text-secondary transition-colors">
 <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 0;">expand_more</span>
@@ -271,7 +254,6 @@
                     </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Service Card 1 -->
 <div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between">
 <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
 <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 0;">photo_camera</span>
@@ -285,7 +267,6 @@
 <a href="pricing.html" class="text-xs font-label-md uppercase text-on-surface hover:text-secondary flex items-center">Details <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
 </div>
 </div>
-<!-- Service Card 2 -->
 <div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between">
 <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
 <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 0;">videocam</span>
@@ -299,7 +280,6 @@
 <a href="pricing.html" class="text-xs font-label-md uppercase text-on-surface hover:text-secondary flex items-center">Details <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
 </div>
 </div>
-<!-- Service Card 3 -->
 <div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between">
 <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
 <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 0;">movie_filter</span>
@@ -322,7 +302,7 @@
 <div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-16 text-center">
 <span class="font-label-md text-label-md text-secondary mb-4 block uppercase">[ SELECTED MISSIONS ]</span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Portfolio Showcase</h2>
-<p class="font-body-md text-on-surface-variant max-w-lg mx-auto mt-4">Explore recent aerial photography assignments across commercial infrastructure, luxury real estate, and structural inspection.</p>
+<p class="font-body-md text-on-surface-variant max-w-lg mx-auto mt-4">Explore recent aerial photography assignments across commercial infrastructure, luxury real estate, and residential surveys.</p>
 </div>
 
 <!-- Bento Grid Showcase Cards -->
@@ -380,16 +360,16 @@
 
   <!-- Card 4 -->
   <div class="relative group overflow-hidden h-[450px] rounded-2xl border border-outline-variant hover:border-secondary transition-all">
-    <img alt="Multi-Story Development High-Altitude View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/construction-audit/photo-1.webp"/>
+    <img alt="Suburban Development High-Altitude View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp"/>
     <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
     <div class="absolute bottom-0 left-0 p-8 w-full">
       <div class="flex items-center gap-3 mb-2">
-        <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded">INSPECTION</span>
-        <span class="font-label-md text-xs text-surface-container-lowest">AUDIT</span>
+        <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded">SURVEY</span>
+        <span class="font-label-md text-xs text-surface-container-lowest">RESIDENTIAL</span>
       </div>
-      <h3 class="font-headline-md text-2xl text-surface-container-lowest mb-2">Multi-Story Development Audit</h3>
-      <p class="font-body-md text-sm text-surface-variant mb-4">High-altitude construction progress audit and structural integrity survey.</p>
-      <a class="inline-flex items-center text-secondary font-label-md text-sm hover:text-white uppercase transition-colors" href="projects/construction-audit.html">
+      <h3 class="font-headline-md text-2xl text-surface-container-lowest mb-2">Suburban Development Survey</h3>
+      <p class="font-body-md text-sm text-surface-variant mb-4">High-altitude aerial photography, roof inspection, and property boundary survey.</p>
+      <a class="inline-flex items-center text-secondary font-label-md text-sm hover:text-white uppercase transition-colors" href="projects/residential-development.html">
         EXPLORE MISSION (4 PHOTOS) <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
       </a>
     </div>
@@ -416,7 +396,6 @@
     <p class="font-body-md text-on-surface-variant mb-8 leading-relaxed">
       Every flight is executed by a CAA certified remote pilot complying strictly with Civil Aviation Authority regulations. We hold GVC and A2 CoC operational qualifications and £5M Public Liability Insurance coverage for total operational confidence.
     </p>
-    <!-- Metric Grid -->
     <div class="grid grid-cols-2 gap-6 pt-6 border-t border-outline-variant">
       <div>
         <span class="font-headline-lg text-headline-lg text-secondary block">CAA</span>
@@ -464,10 +443,8 @@
   </p>
 </div>
 
-<!-- Form Container Card -->
 <div class="max-w-4xl mx-auto bg-surface-container-low border border-outline-variant rounded-2xl p-8 md:p-12 shadow-lg relative overflow-hidden">
   
-  <!-- Success Notification Alert (Hidden by default) -->
   <div id="contact-success-alert" class="hidden mb-8 p-6 bg-secondary/10 border border-secondary text-on-surface rounded-xl flex items-start gap-4">
     <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
     <div>
@@ -500,7 +477,7 @@
           <option value="Photography">Aerial Photography (From £100)</option>
           <option value="Cinematography">Cinematography & 4K Video (From £150)</option>
           <option value="Custom Branded">Custom Branded Media Package (From £200)</option>
-          <option value="Inspection">Roof / Industrial Inspection</option>
+          <option value="Inspection">Roof / Residential Inspection</option>
           <option value="Other">Other Bespoke Requirement</option>
         </select>
       </div>
@@ -545,21 +522,18 @@
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Frequently Asked Questions</h2>
 </div>
 <div class="space-y-8">
-<!-- FAQ Item 1 -->
 <div class="border-b border-outline-variant pb-8">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">How much does it cost?</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                             Drone packages start at £100 for a basic photo package, £150 for a photo and video package and £200 for custom branded photo and videos. Contact us via our booking form above for a detailed quote tailored to your specific requirements.
                         </p>
 </div>
-<!-- FAQ Item 2 -->
 <div class="border-b border-outline-variant pb-8">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Where can you survey?</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                             Certain restrictions apply to exactly where we can operate legally and safely under CAA guidelines. However, a survey can typically be conducted over most residential properties, commercial sites, and rural buildings across the UK.
                         </p>
 </div>
-<!-- FAQ Item 3 -->
 <div class="border-b border-outline-variant pb-8">
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">What happens if weather conditions are bad?</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -580,12 +554,10 @@
 <!-- Footer Component -->
 <footer class="w-full py-margin-desktop bg-surface-container border-t border-outline-variant">
 <div class="flex flex-col items-center gap-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-<!-- Logo -->
 <div class="mb-8 opacity-80 hover:opacity-100 transition-opacity duration-300 text-center">
 <img alt="Avento Drones Logo" loading="lazy" class="h-16 w-16 object-contain mb-4 mx-auto" src="images/square logo real.png"/>
 <span class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest">AVENTO DRONES</span>
 </div>
-<!-- Links -->
 <nav class="flex flex-wrap justify-center gap-8 mb-12">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300 uppercase" href="portfolio.html">PORTFOLIO</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300 uppercase" href="pricing.html">SERVICES</a>
@@ -593,7 +565,6 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300 uppercase" href="#contact">CONTACT</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-300 uppercase" href="https://instagram.com/aventodrones" target="_blank">INSTAGRAM</a>
 </nav>
-<!-- Copyright -->
 <div class="text-center w-full pt-8 border-t border-outline-variant">
 <p class="font-label-md text-label-md text-on-surface-variant uppercase">
                     © 2024 AVENTO DRONES. ALL RIGHTS RESERVED.
