@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Portfolio & Project Discovery | Avento Drones</title>
+<title>Portfolio & Project Showcase | Avento Drones</title>
 <meta name="description" content="Explore Avento Drones aerial portfolio featuring commercial infrastructure, luxury real estate showcases, high-altitude structural inspections, and 4K cinematography." />
-<meta property="og:title" content="Portfolio Discovery | Avento Drones" />
+<meta property="og:title" content="Portfolio Showcase | Avento Drones" />
 <meta property="og:description" content="View high-resolution UAV aerial photography and cinematography project archives." />
-<meta property="og:image" content="images/projects/borgwarner/photo-1.webp" />
+<meta property="og:image" content="images/projects/industrial-facility/photo-1.webp" />
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -27,48 +27,14 @@
           "surface-dim": "#dadada",
           "surface-variant": "#e2e2e2",
           "surface-container-lowest": "#ffffff",
-          "on-primary-fixed": "#1a1c1e",
           "primary": "#000101",
-          "on-tertiary-fixed-variant": "#41474d",
-          "inverse-primary": "#c6c6c9",
           "background": "#f3f2ed",
-          "tertiary": "#000103",
           "on-surface": "#1a1c1c",
-          "outline": "#75777a",
-          "on-secondary": "#1a1c1c",
-          "on-primary-fixed-variant": "#454749",
           "secondary": "#D4AF37",
-          "error-container": "#ffdad6",
-          "tertiary-fixed": "#dde3ea",
           "outline-variant": "#c5c6ca",
-          "secondary-fixed": "#ffe088",
-          "on-tertiary-fixed": "#161c21",
-          "inverse-on-surface": "#f0f1f1",
-          "on-error": "#ffffff",
-          "on-primary-container": "#838486",
-          "primary-container": "#1a1c1e",
           "surface-container-low": "#ebe9e0",
-          "on-background": "#1a1c1c",
-          "surface-container-highest": "#e2e2e2",
-          "on-error-container": "#93000a",
-          "secondary-fixed-dim": "#e9c349",
           "on-surface-variant": "#44474a",
-          "on-tertiary": "#ffffff",
-          "surface-container-high": "#e8e8e8",
-          "surface-tint": "#5d5e61",
-          "on-secondary-container": "#745c00",
-          "tertiary-fixed-dim": "#c1c7ce",
-          "on-primary": "#ffffff",
-          "surface-container": "#e6e3da",
-          "tertiary-container": "#171d22",
-          "primary-fixed": "#e2e2e5",
-          "primary-fixed-dim": "#c6c6c9",
-          "surface": "#f3f2ed",
-          "inverse-surface": "#2f3131",
-          "surface-bright": "#f3f2ed",
-          "on-tertiary-container": "#7f858b",
-          "on-secondary-fixed": "#241a00",
-          "on-secondary-fixed-variant": "#574500"
+          "surface-container": "#e6e3da"
         },
         "fontFamily": {
           "body-lg": ["Inter"],
@@ -76,7 +42,6 @@
           "headline-md": ["Chivo"],
           "body-md": ["Inter"],
           "headline-lg": ["Chivo"],
-          "display-lg-mobile": ["Chivo"],
           "display-lg": ["Chivo"]
         }
       }
@@ -90,7 +55,7 @@
   ::-webkit-scrollbar-thumb:hover { background: #75777a; }
 </style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary">
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary relative overflow-x-hidden">
 
 <!-- Navigation Header -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-white/20 group bg-transparent [&.scrolled]:bg-white/95 [&.scrolled]:backdrop-blur-md [&.scrolled]:border-outline-variant/30 [&.scrolled]:shadow-sm h-20">
@@ -103,7 +68,6 @@
     <nav class="flex items-stretch h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30">
       <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 text-secondary border-b-4 border-secondary uppercase font-label-md text-label-md" href="portfolio.html">PORTFOLIO</a>
       <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 text-surface-container-lowest group-[.scrolled]:text-black hover:text-secondary uppercase font-label-md text-label-md" href="pricing.html">SERVICES</a>
-      <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 text-surface-container-lowest group-[.scrolled]:text-black hover:text-secondary uppercase font-label-md text-label-md" href="index.html#projects">PROJECTS</a>
       <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 text-surface-container-lowest group-[.scrolled]:text-black hover:text-secondary uppercase font-label-md text-label-md" href="index.html#about">ABOUT</a>
       <a class="flex items-center h-full px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 text-surface-container-lowest group-[.scrolled]:text-black hover:text-secondary uppercase font-label-md text-label-md" href="index.html#contact">CONTACT</a>
     </nav>
@@ -127,9 +91,8 @@
       <button id="mobile-menu-close" class="text-surface-variant hover:text-secondary p-2"><span class="material-symbols-outlined text-2xl">close</span></button>
     </div>
     <nav class="flex flex-col py-6 px-6 space-y-4">
-      <a class="mobile-nav-link text-lg font-headline-md uppercase text-secondary py-2 border-b border-white/5" href="portfolio.html">PORTFOLIO DISCOVERY</a>
+      <a class="mobile-nav-link text-lg font-headline-md uppercase text-secondary py-2 border-b border-white/5" href="portfolio.html">PORTFOLIO SHOWCASE</a>
       <a class="mobile-nav-link text-lg font-headline-md uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5" href="pricing.html">SERVICES & PRICING</a>
-      <a class="mobile-nav-link text-lg font-headline-md uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5" href="index.html#projects">PROJECTS</a>
       <a class="mobile-nav-link text-lg font-headline-md uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5" href="index.html#about">ABOUT US</a>
       <a class="mobile-nav-link text-lg font-headline-md uppercase text-surface-container-lowest hover:text-secondary py-2 border-b border-white/5" href="index.html#contact">CONTACT</a>
     </nav>
@@ -150,7 +113,7 @@
   <div class="relative z-20 text-center px-6 max-w-[1440px] mx-auto mt-20">
     <span class="font-label-md text-label-md text-secondary mb-4 block uppercase text-center">[ FLIGHT MISSION ARCHIVE ]</span>
     <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-container-lowest mb-4 tracking-tight">
-      Portfolio Discovery
+      Portfolio & Mission Showcase
     </h1>
     <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto tracking-wide">
       Explore high-definition UAV photography and 4K aerial videography missions executed across commercial, residential, and industrial sectors.
@@ -163,7 +126,7 @@
   <!-- Category Filter Controls -->
   <div class="flex flex-wrap items-center justify-center gap-3 mb-16">
     <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-secondary text-on-secondary shadow-md cursor-pointer">
-      All Projects
+      All Showcase Missions
     </button>
     <button data-filter="commercial" class="filter-btn px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-secondary cursor-pointer">
       Commercial Facilities
@@ -179,10 +142,10 @@
   <!-- Projects Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-grid">
     
-    <!-- Project 1: BorgWarner -->
+    <!-- Project 1: Commercial Industrial Campus -->
     <article data-category="commercial inspection" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between">
       <div class="relative h-[360px] overflow-hidden">
-        <img alt="BorgWarner Technical Center Aerial Shot" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/borgwarner/photo-1.webp"/>
+        <img alt="Commercial Industrial Campus Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
@@ -190,24 +153,24 @@
         </div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="font-label-md text-xs text-secondary tracking-widest uppercase block mb-1">INDUSTRIAL FACILITY</span>
-          <h3 class="font-headline-md text-2xl text-surface-container-lowest">BorgWarner Technical Center</h3>
+          <h3 class="font-headline-md text-2xl text-surface-container-lowest">Commercial Industrial Campus</h3>
         </div>
       </div>
       <div class="p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">High-resolution aerial survey and thermal roof inspection covering extensive manufacturing infrastructure.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">UK SITE LOCATION</span>
-          <a href="projects/borgwarner.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
+          <a href="projects/industrial-facility.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
             VIEW PROJECT DETAILS <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
           </a>
         </div>
       </div>
     </article>
 
-    <!-- Project 2: 2 North Park Grove -->
+    <!-- Project 2: Luxury Country Estate -->
     <article data-category="real-estate" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between">
       <div class="relative h-[360px] overflow-hidden">
-        <img alt="2 North Park Grove Residence Aerial Shot" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/north-park-grove/photo-1.webp"/>
+        <img alt="Luxury Country Estate Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">REAL ESTATE</span>
@@ -215,24 +178,24 @@
         </div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="font-label-md text-xs text-secondary tracking-widest uppercase block mb-1">RESIDENTIAL ESTATE</span>
-          <h3 class="font-headline-md text-2xl text-surface-container-lowest">2 North Park Grove Showcase</h3>
+          <h3 class="font-headline-md text-2xl text-surface-container-lowest">Luxury Country Estate</h3>
         </div>
       </div>
       <div class="p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">Cinematographic residential estate showcase highlighting property boundaries, manicured grounds, and architectural roof design.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">RESIDENTIAL SURVEY</span>
-          <a href="projects/north-park-grove.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
+          <a href="projects/private-estate.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
             VIEW PROJECT DETAILS <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
           </a>
         </div>
       </div>
     </article>
 
-    <!-- Project 3: Omega Stone -->
+    <!-- Project 3: Architectural Production Plant -->
     <article data-category="commercial" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between">
       <div class="relative h-[360px] overflow-hidden">
-        <img alt="Omega Stone Commercial Headquarters Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/omega-stone/photo-1.webp"/>
+        <img alt="Architectural Production Plant Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
@@ -240,24 +203,24 @@
         </div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="font-label-md text-xs text-secondary tracking-widest uppercase block mb-1">ARCHITECTURAL MEDIA</span>
-          <h3 class="font-headline-md text-2xl text-surface-container-lowest">Omega Stone Headquarters</h3>
+          <h3 class="font-headline-md text-2xl text-surface-container-lowest">Architectural Production Plant</h3>
         </div>
       </div>
       <div class="p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">Ultra-stabilized 4K photography and branded media package created for commercial property branding and marketing.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">COMMERCIAL MEDIA</span>
-          <a href="projects/omega-stone.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
+          <a href="projects/architectural-plant.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
             VIEW PROJECT DETAILS <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
           </a>
         </div>
       </div>
     </article>
 
-    <!-- Project 4: Springfield Building -->
+    <!-- Project 4: Multi-Story Development Audit -->
     <article data-category="inspection commercial" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between">
       <div class="relative h-[360px] overflow-hidden">
-        <img alt="Springfield Development High-Altitude View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/springfield-building/photo-1.webp"/>
+        <img alt="Multi-Story Development High-Altitude View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/construction-audit/photo-1.webp"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">INSPECTION</span>
@@ -265,14 +228,14 @@
         </div>
         <div class="absolute bottom-6 left-6 right-6">
           <span class="font-label-md text-xs text-secondary tracking-widest uppercase block mb-1">CONSTRUCTION AUDIT</span>
-          <h3 class="font-headline-md text-2xl text-surface-container-lowest">Springfield New Development</h3>
+          <h3 class="font-headline-md text-2xl text-surface-container-lowest">Multi-Story Development Audit</h3>
         </div>
       </div>
       <div class="p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">High-altitude construction progress audit and structural integrity imagery for multi-story commercial development.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">STRUCTURAL INSPECTION</span>
-          <a href="projects/springfield-building.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
+          <a href="projects/construction-audit.html" class="inline-flex items-center text-secondary font-label-md text-label-md hover:text-on-surface transition-colors uppercase font-medium">
             VIEW PROJECT DETAILS <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
           </a>
         </div>
@@ -306,7 +269,6 @@
   <nav class="flex flex-wrap justify-center gap-8 mb-12">
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase" href="portfolio.html">PORTFOLIO</a>
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase" href="pricing.html">SERVICES</a>
-    <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase" href="index.html#projects">PROJECTS</a>
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase" href="index.html#about">ABOUT</a>
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary uppercase" href="index.html#contact">CONTACT</a>
   </nav>
@@ -317,14 +279,12 @@
 </footer>
 
 <script>
-    // Header scroll background toggle
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
     });
 
-    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -343,7 +303,6 @@
     if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
     if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMenu);
 
-    // Filter Controls JS
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
