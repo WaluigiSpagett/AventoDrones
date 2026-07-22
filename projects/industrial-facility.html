@@ -78,12 +78,19 @@
 <main class="flex-grow pt-28 pb-32">
 <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
 
-  <!-- Breadcrumb -->
-  <nav class="flex items-center gap-2 font-label-md text-xs text-on-surface-variant uppercase mb-8">
-    <a href="../portfolio.html" class="hover:text-secondary">Portfolio</a>
-    <span>/</span>
-    <span class="text-secondary font-medium">Commercial Industrial Campus</span>
-  </nav>
+  <!-- Breadcrumb & Top Quick Navigation -->
+  <div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant/40">
+    <nav class="flex items-center gap-2 font-label-md text-xs text-on-surface-variant uppercase">
+      <a href="../portfolio.html" class="hover:text-secondary">Portfolio</a>
+      <span>/</span>
+      <span class="text-secondary font-medium">Commercial Industrial Campus</span>
+    </nav>
+    <div class="flex items-center gap-4 text-xs font-label-md uppercase">
+      <a href="construction-audit.html" class="inline-flex items-center gap-1 text-on-surface hover:text-secondary"><span class="material-symbols-outlined text-sm">chevron_left</span> Prev</a>
+      <span class="text-outline-variant">|</span>
+      <a href="private-estate.html" class="inline-flex items-center gap-1 text-on-surface hover:text-secondary">Next <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+    </div>
+  </div>
 
   <!-- Project Title Header & Badges -->
   <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-outline-variant pb-8">
@@ -158,7 +165,7 @@
   </section>
 
   <!-- Project Overview & Scope -->
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-8 border-t border-outline-variant">
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-8 border-t border-outline-variant mb-20">
     <div class="md:col-span-2 space-y-6">
       <h3 class="font-headline-md text-2xl text-on-surface">Mission Objective & Execution</h3>
       <p class="font-body-md text-on-surface-variant leading-relaxed">
@@ -184,18 +191,59 @@
     </div>
   </section>
 
-  <!-- Navigation Pagination -->
-  <div class="flex items-center justify-between pt-16 border-t border-outline-variant mt-16">
-    <a href="construction-audit.html" class="inline-flex items-center gap-2 font-label-md text-sm text-on-surface hover:text-secondary uppercase">
-      <span class="material-symbols-outlined">arrow_back</span> Previous Project
-    </a>
-    <a href="../portfolio.html" class="font-label-md text-xs text-on-surface-variant hover:text-secondary uppercase">
-      Back to Portfolio Showcase
-    </a>
-    <a href="private-estate.html" class="inline-flex items-center gap-2 font-label-md text-sm text-on-surface hover:text-secondary uppercase">
-      Next Project <span class="material-symbols-outlined">arrow_forward</span>
-    </a>
-  </div>
+  <!-- Interactive Project Switcher Bar (Quick Navigation to Other Projects) -->
+  <section class="pt-12 border-t border-outline-variant">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <span class="font-label-md text-xs text-secondary uppercase block mb-1">[ EXPLORE OTHER MISSIONS ]</span>
+        <h3 class="font-headline-md text-2xl text-on-surface">Switch Project Showcase</h3>
+      </div>
+      <a href="../portfolio.html" class="font-label-md text-xs text-on-surface-variant hover:text-secondary uppercase">
+        View All in Portfolio Archive &rarr;
+      </a>
+    </div>
+
+    <!-- Quick Switcher Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      
+      <!-- Switch to Private Estate -->
+      <a href="private-estate.html" class="group bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden hover:border-secondary transition-all p-4 flex flex-col justify-between">
+        <div class="relative h-[160px] rounded-lg overflow-hidden mb-4">
+          <img alt="Luxury Country Estate" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="../images/projects/private-estate/photo-1.webp" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent"></div>
+        </div>
+        <div>
+          <span class="font-label-md text-[11px] text-secondary uppercase block">REAL ESTATE</span>
+          <h4 class="font-headline-md text-lg text-on-surface group-hover:text-secondary transition-colors">Luxury Country Estate</h4>
+        </div>
+      </a>
+
+      <!-- Switch to Architectural Plant -->
+      <a href="architectural-plant.html" class="group bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden hover:border-secondary transition-all p-4 flex flex-col justify-between">
+        <div class="relative h-[160px] rounded-lg overflow-hidden mb-4">
+          <img alt="Architectural Production Plant" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="../images/projects/architectural-plant/photo-1.webp" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent"></div>
+        </div>
+        <div>
+          <span class="font-label-md text-[11px] text-secondary uppercase block">COMMERCIAL MEDIA</span>
+          <h4 class="font-headline-md text-lg text-on-surface group-hover:text-secondary transition-colors">Architectural Production Plant</h4>
+        </div>
+      </a>
+
+      <!-- Switch to Construction Audit -->
+      <a href="construction-audit.html" class="group bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden hover:border-secondary transition-all p-4 flex flex-col justify-between">
+        <div class="relative h-[160px] rounded-lg overflow-hidden mb-4">
+          <img alt="Multi-Story Development Audit" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="../images/projects/construction-audit/photo-1.webp" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent"></div>
+        </div>
+        <div>
+          <span class="font-label-md text-[11px] text-secondary uppercase block">INSPECTION AUDIT</span>
+          <h4 class="font-headline-md text-lg text-on-surface group-hover:text-secondary transition-colors">Multi-Story Development Audit</h4>
+        </div>
+      </a>
+
+    </div>
+  </section>
 
 </div>
 </main>
