@@ -357,9 +357,9 @@
             const filter = btn.getAttribute('data-filter');
             projectCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
-                    card.style.display = 'flex';
+                    card.classList.remove('hidden');
                 } else {
-                    card.style.display = 'none';
+                    card.classList.add('hidden');
                 }
             });
         });
