@@ -260,8 +260,9 @@
                         Drone packages tailored to high-end real estate, commercial infrastructure, and cinematic productions.
                     </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-6 md:p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-none -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-8 md:pb-0 md:overflow-visible">
+<div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-6 md:p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink">
 <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
 <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 0;">photo_camera</span>
 </div>
@@ -274,7 +275,7 @@
 <a href="pricing.html" class="text-xs font-label-md uppercase text-on-surface hover:text-secondary flex items-center">Details <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
 </div>
 </div>
-<div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-6 md:p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between">
+<div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-6 md:p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink">
 <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
 <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 0;">videocam</span>
 </div>
@@ -287,7 +288,7 @@
 <a href="pricing.html" class="text-xs font-label-md uppercase text-on-surface hover:text-secondary flex items-center">Details <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
 </div>
 </div>
-<div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-6 md:p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between">
+<div class="group bg-surface-container-low border border-outline-variant rounded-xl hover:border-secondary p-6 md:p-10 transition-all duration-500 ease-out relative overflow-hidden flex flex-col justify-between min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink">
 <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-100 transition-opacity duration-500">
 <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings: 'FILL' 0;">movie_filter</span>
 </div>
@@ -301,6 +302,13 @@
 </div>
 </div>
 </div>
+<!-- Mobile Swipe Indicator -->
+<div class="flex md:hidden items-center justify-center gap-2 mt-4 text-xs font-label-md text-on-surface-variant uppercase">
+<span class="material-symbols-outlined text-sm text-secondary animate-pulse">swipe_left</span>
+SWIPE SERVICES
+<span class="material-symbols-outlined text-sm text-secondary animate-pulse">swipe_right</span>
+</div>
+</div>
 </div>
 </section>
 
@@ -312,75 +320,113 @@
 <p class="font-body-md text-on-surface-variant max-w-lg mx-auto mt-4">Explore recent aerial photography assignments across commercial infrastructure, luxury real estate, and residential surveys.</p>
 </div>
 
-<!-- Bento Grid Showcase Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-  <!-- Card 1 -->
-  <a href="projects/industrial-facility.html" class="block relative group overflow-hidden h-[450px] rounded-2xl border border-outline-variant hover:border-secondary transition-all cursor-pointer">
-    <img alt="Industrial Manufacturing Site Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-8 w-full">
-      <div class="flex items-center gap-3 mb-2">
-        <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded">COMMERCIAL</span>
-        <span class="font-label-md text-xs text-surface-container-lowest">UK SITE</span>
+<!-- Bento Grid Showcase Cards (Mobile Carousel / Desktop Grid) -->
+<div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+  <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-none -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 md:grid md:grid-cols-2 md:gap-8 md:pb-0 md:overflow-visible">
+    
+    <!-- Card 1 -->
+    <a href="projects/industrial-facility.html" class="min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
+      <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
+        <img alt="Industrial Manufacturing Site Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+        <div class="absolute top-4 left-4 flex items-center gap-2">
+          <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
+          <span class="px-3 py-1 bg-surface/80 text-on-surface backdrop-blur-md font-label-md text-xs uppercase rounded border border-white/20">UK SITE</span>
+        </div>
       </div>
-      <h3 class="font-headline-md text-2xl text-surface-container-lowest mb-2">Industrial Manufacturing Site</h3>
-      <p class="font-body-md text-sm text-surface-variant mb-4">High-resolution aerial survey and thermal roof inspection for extensive industrial facility.</p>
-      <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-white uppercase transition-colors">
-        VIEW PROJECT SHOWCASE <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+      <div class="p-6 md:p-8 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 class="font-headline-md text-xl md:text-2xl text-on-surface mb-2 group-hover:text-secondary transition-colors">Industrial Manufacturing Site</h3>
+          <p class="font-body-md text-sm text-on-surface-variant mb-6">High-resolution aerial survey and thermal roof inspection for extensive industrial facility.</p>
+        </div>
+        <div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between">
+          <span class="font-label-md text-xs text-on-surface-variant uppercase">FULL MEDIA PACKAGE</span>
+          <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-on-surface transition-colors uppercase font-medium">
+            VIEW PROJECT <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
 
-  <!-- Card 2 -->
-  <a href="projects/private-estate.html" class="block relative group overflow-hidden h-[450px] rounded-2xl border border-outline-variant hover:border-secondary transition-all cursor-pointer">
-    <img alt="Private Residential Home Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-8 w-full">
-      <div class="flex items-center gap-3 mb-2">
-        <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded">PROPERTY</span>
-        <span class="font-label-md text-xs text-surface-container-lowest">RESIDENTIAL</span>
+    <!-- Card 2 -->
+    <a href="projects/private-estate.html" class="min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
+      <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
+        <img alt="Private Residential Home Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+        <div class="absolute top-4 left-4 flex items-center gap-2">
+          <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">PROPERTY</span>
+          <span class="px-3 py-1 bg-surface/80 text-on-surface backdrop-blur-md font-label-md text-xs uppercase rounded border border-white/20">RESIDENTIAL</span>
+        </div>
       </div>
-      <h3 class="font-headline-md text-2xl text-surface-container-lowest mb-2">Private Residential Home</h3>
-      <p class="font-body-md text-sm text-surface-variant mb-4">Cinematic estate showcase highlighting property boundaries and architecture.</p>
-      <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-white uppercase transition-colors">
-        VIEW PROJECT SHOWCASE <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+      <div class="p-6 md:p-8 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 class="font-headline-md text-xl md:text-2xl text-on-surface mb-2 group-hover:text-secondary transition-colors">Private Residential Home</h3>
+          <p class="font-body-md text-sm text-on-surface-variant mb-6">Cinematic estate showcase highlighting property boundaries and architecture.</p>
+        </div>
+        <div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between">
+          <span class="font-label-md text-xs text-on-surface-variant uppercase">FULL MEDIA PACKAGE</span>
+          <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-on-surface transition-colors uppercase font-medium">
+            VIEW PROJECT <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
 
-  <!-- Card 3 -->
-  <a href="projects/architectural-plant.html" class="block relative group overflow-hidden h-[450px] rounded-2xl border border-outline-variant hover:border-secondary transition-all cursor-pointer">
-    <img alt="Commercial Production Facility Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-8 w-full">
-      <div class="flex items-center gap-3 mb-2">
-        <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded">COMMERCIAL</span>
-        <span class="font-label-md text-xs text-surface-container-lowest">MEDIA</span>
+    <!-- Card 3 -->
+    <a href="projects/architectural-plant.html" class="min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
+      <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
+        <img alt="Commercial Production Facility Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+        <div class="absolute top-4 left-4 flex items-center gap-2">
+          <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
+          <span class="px-3 py-1 bg-surface/80 text-on-surface backdrop-blur-md font-label-md text-xs uppercase rounded border border-white/20">MEDIA</span>
+        </div>
       </div>
-      <h3 class="font-headline-md text-2xl text-surface-container-lowest mb-2">Commercial Production Facility</h3>
-      <p class="font-body-md text-sm text-surface-variant mb-4">4K Ultra HD aerial photography and custom branded media package.</p>
-      <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-white uppercase transition-colors">
-        VIEW PROJECT SHOWCASE <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+      <div class="p-6 md:p-8 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 class="font-headline-md text-xl md:text-2xl text-on-surface mb-2 group-hover:text-secondary transition-colors">Commercial Production Facility</h3>
+          <p class="font-body-md text-sm text-on-surface-variant mb-6">4K Ultra HD aerial photography and custom branded media package.</p>
+        </div>
+        <div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between">
+          <span class="font-label-md text-xs text-on-surface-variant uppercase">FULL MEDIA PACKAGE</span>
+          <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-on-surface transition-colors uppercase font-medium">
+            VIEW PROJECT <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
 
-  <!-- Card 4 -->
-  <a href="projects/residential-development.html" class="block relative group overflow-hidden h-[450px] rounded-2xl border border-outline-variant hover:border-secondary transition-all cursor-pointer">
-    <img alt="Educational & Public Sector Facility View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp"/>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-8 w-full">
-      <div class="flex items-center gap-3 mb-2">
-        <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded">SURVEY</span>
-        <span class="font-label-md text-xs text-surface-container-lowest">RESIDENTIAL</span>
+    <!-- Card 4 -->
+    <a href="projects/residential-development.html" class="min-w-[85vw] max-w-[85vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
+      <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
+        <img alt="Educational & Public Sector Facility View" loading=lazy class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+        <div class="absolute top-4 left-4 flex items-center gap-2">
+          <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">SURVEY</span>
+          <span class="px-3 py-1 bg-surface/80 text-on-surface backdrop-blur-md font-label-md text-xs uppercase rounded border border-white/20">PUBLIC SECTOR</span>
+        </div>
       </div>
-      <h3 class="font-headline-md text-2xl text-surface-container-lowest mb-2">Educational & Public Sector Facility</h3>
-      <p class="font-body-md text-sm text-surface-variant mb-4">High-altitude aerial photography, roof inspection, and site survey for a public sector educational facility.</p>
-      <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-white uppercase transition-colors">
-        VIEW PROJECT SHOWCASE <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+      <div class="p-6 md:p-8 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 class="font-headline-md text-xl md:text-2xl text-on-surface mb-2 group-hover:text-secondary transition-colors">Educational & Public Sector Facility</h3>
+          <p class="font-body-md text-sm text-on-surface-variant mb-6">High-altitude aerial photography, roof inspection, and site survey for a public sector educational facility.</p>
+        </div>
+        <div class="pt-4 border-t border-outline-variant/60 flex items-center justify-between">
+          <span class="font-label-md text-xs text-on-surface-variant uppercase">FULL MEDIA PACKAGE</span>
+          <div class="inline-flex items-center text-secondary font-label-md text-sm group-hover:text-on-surface transition-colors uppercase font-medium">
+            VIEW PROJECT <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+
+  </div>
+  <!-- Mobile Swipe Indicator -->
+  <div class="flex md:hidden items-center justify-center gap-2 mt-4 text-xs font-label-md text-on-surface-variant uppercase">
+    <span class="material-symbols-outlined text-sm text-secondary animate-pulse">swipe_left</span>
+    SWIPE TO EXPLORE PROJECTS
+    <span class="material-symbols-outlined text-sm text-secondary animate-pulse">swipe_right</span>
+  </div>
 </div>
 
 <div class="text-center mt-16">
