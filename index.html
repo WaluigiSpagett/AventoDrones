@@ -630,28 +630,44 @@
 
     const contactForm = document.getElementById('contact-form');
     const contactSuccessAlert = document.getElementById('contact-success-alert');
+    const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'SENDING INQUIRY...';
+            }
+
             const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const service = formData.get('service');
-            const location = formData.get('location');
-            const message = formData.get('message');
+            formData.append('access_key', '5647be27-a1ed-4d3a-b88c-48b776930370');
+            formData.append('subject', `New Mission Inquiry: ${formData.get('service') || 'General'} - ${formData.get('name')}`);
+            formData.append('from_name', 'Avento Drones Website');
 
-            const mailtoSubject = encodeURIComponent(`Avento Drones Inquiry: ${service} - ${name}`);
-            const mailtoBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\n\nDetails:\n${message}`);
-            
-            contactSuccessAlert.classList.remove('hidden');
-            contactForm.reset();
-            contactSuccessAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
 
-            setTimeout(() => {
-                window.location.href = `mailto:William@aventodrones.co.uk?subject=${mailtoSubject}&body=${mailtoBody}`;
-            }, 1000);
+                if (result.success) {
+                    contactSuccessAlert.classList.remove('hidden');
+                    contactForm.reset();
+                    contactSuccessAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    alert('Submission notice: ' + (result.message || 'Please try again.'));
+                }
+            } catch (err) {
+                alert('Connection error. Please email William@aventodrones.co.uk directly.');
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = 'SEND MISSION INQUIRY';
+                }
+            }
         });
     }
 </script>
