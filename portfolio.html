@@ -49,10 +49,25 @@
   }
 </script>
 <style>
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #f9f9f9; }
-  ::-webkit-scrollbar-thumb { background: #c5c6ca; }
-  ::-webkit-scrollbar-thumb:hover { background: #75777a; }
+  /* Discrete, modern scrollbar system */
+  html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
+  }
+  ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+      background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: rgba(197, 198, 202, 0.5);
+      border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+      background: rgba(212, 175, 55, 0.8);
+  }
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary relative overflow-x-hidden">
@@ -122,7 +137,7 @@
 </section>
 
 <!-- Discovery Grid Section with Filter Tabs -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto pb-32">
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto pb-16 md:pb-32">
   <!-- Category Filter Controls -->
   <div class="flex flex-wrap items-center justify-center gap-3 mb-16">
     <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-secondary text-on-secondary shadow-md cursor-pointer">
