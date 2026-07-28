@@ -666,6 +666,9 @@
       <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-secondary text-on-secondary font-label-md text-label-md uppercase tracking-widest rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors duration-300 cursor-pointer">
         SEND INQUIRY
       </button>
+      <p class="font-body-md text-xs text-on-surface-variant/80 mt-3 text-center max-w-lg mx-auto leading-relaxed">
+        🔒 <span class="font-semibold">UK GDPR Notice:</span> Personal details submitted via this form are processed securely via Web3Forms solely to respond to your enquiry and provide flight estimates. We never sell or share your data.
+      </p>
     </div>
   </form>
 
@@ -732,6 +735,7 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase" href="#about">ABOUT</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase" href="#contact">CONTACT</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase" href="https://instagram.com/aventodrones" target="_blank">INSTAGRAM</a>
+    <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase cursor-pointer">PRIVACY POLICY</button>
 </nav>
 <div class="text-center w-full pt-8 border-t border-outline-variant">
 <p class="font-label-md text-label-md text-on-surface-variant uppercase">
@@ -832,5 +836,24 @@
         });
     }
 </script>
+
+<!-- UK GDPR Privacy Policy Modal -->
+<div id="privacy-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer">&times;</button>
+    <h3 class="font-headline-lg text-2xl text-on-surface mb-4">UK GDPR Privacy Notice</h3>
+    <div class="space-y-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+      <p><strong class="text-on-surface">1. Data Controller:</strong> Avento Drones (William@aventodrones.co.uk) acts as the data controller for personal details collected via this website.</p>
+      <p><strong class="text-on-surface">2. Data We Collect:</strong> When you submit a booking or enquiry form, we collect your Full Name, Email Address, Phone Number, and Project Location/Details.</p>
+      <p><strong class="text-on-surface">3. Purpose & Legal Basis:</strong> Your personal data is collected under the legal basis of pre-contractual steps and legitimate interest strictly to respond to flight inquiries, conduct CAA airspace risk assessments, and provide accurate operational quotes.</p>
+      <p><strong class="text-on-surface">4. Data Processors & Cookies:</strong> Form submissions are processed securely via Web3Forms API. This website uses zero non-essential tracking or marketing cookies.</p>
+      <p><strong class="text-on-surface">5. Your Rights:</strong> Under UK GDPR and the Data Protection Act 2018, you have the right to request access to, correction of, or deletion of your personal data at any time by contacting us directly.</p>
+    </div>
+    <div class="mt-6 pt-4 border-t border-outline-variant text-right">
+      <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="px-6 py-2.5 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors cursor-pointer">Close Notice</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
