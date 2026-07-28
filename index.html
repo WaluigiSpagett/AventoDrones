@@ -157,6 +157,105 @@
     animation: carouselPeekHint 2.5s ease-in-out infinite;
   }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://aventodrones.co.uk/#organization",
+      "name": "Avento Drones",
+      "url": "https://aventodrones.co.uk",
+      "logo": "https://aventodrones.co.uk/images/square logo real.png",
+      "image": "https://aventodrones.co.uk/images/hero-bg.webp",
+      "email": "William@aventodrones.co.uk",
+      "priceRange": "£100 - £200+",
+      "description": "Professional CAA certified UAV drone photography and 4K aerial cinematography services across the UK for commercial real estate, infrastructure, and roof surveys.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      },
+      "areaServed": [
+        "United Kingdom",
+        "Manchester",
+        "North West England",
+        "Cheshire",
+        "Lancashire"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Drone Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Aerial Photography",
+              "description": "High-resolution RAW aerial stills for real estate and roof surveys.",
+              "provider": { "@id": "https://aventodrones.co.uk/#organization" }
+            },
+            "price": "100.00",
+            "priceCurrency": "GBP"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "4K Aerial Cinematography",
+              "description": "Ultra-stabilized 4K aerial video recording and commercial stills package.",
+              "provider": { "@id": "https://aventodrones.co.uk/#organization" }
+            },
+            "price": "150.00",
+            "priceCurrency": "GBP"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Branded Media Package",
+              "description": "Bespoke commercial video production with logo branding and multi-format exports.",
+              "provider": { "@id": "https://aventodrones.co.uk/#organization" }
+            },
+            "price": "200.00",
+            "priceCurrency": "GBP"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are Avento Drones CAA certified and insured in the UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Avento Drones operates legally under CAA GVC & A2 CoC remote pilot qualifications and carries £1,000,000 (£1M) Public Liability Insurance coverage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a commercial drone photography shoot cost in the UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Avento Drones offers transparent pricing starting from £100 for high-resolution aerial photography, £150 for 4K cinematography, and £200 for custom branded commercial video packages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do Avento Drones cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Avento Drones is based in the North West of England (covering Manchester, Cheshire, Lancashire) and executes commercial drone flight missions nationwide across the UK."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary selection:text-on-secondary relative overflow-x-hidden">
 
