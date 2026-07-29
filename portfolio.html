@@ -7,77 +7,16 @@
 <meta name="description" content="Explore Avento Drones aerial portfolio featuring commercial infrastructure, luxury real estate showcases, residential surveys, and 4K cinematography." />
 <meta property="og:title" content="Portfolio Showcase | Avento Drones" />
 <meta property="og:description" content="View high-resolution UAV aerial photography and cinematography project archives." />
-<meta property="og:image" content="images/projects/industrial-facility/photo-1.webp" />
+<link rel="canonical" href="https://aventodrones.co.uk/portfolio.html" />
+<meta property="og:image" content="https://aventodrones.co.uk/images/projects/industrial-facility/photo-1.webp" />
 <link rel="icon" type="image/png" href="images/favicon.png" /><link rel="shortcut icon" href="images/favicon.ico" />
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "secondary-container": "#fed65b",
-          "error": "#ba1a1a",
-          "surface-dim": "#dadada",
-          "surface-variant": "#e2e2e2",
-          "surface-container-lowest": "#ffffff",
-          "primary": "#000101",
-          "background": "#f3f2ed",
-          "on-surface": "#1a1c1c",
-          "secondary": "#D4AF37",
-          "outline-variant": "#c5c6ca",
-          "surface-container-low": "#ebe9e0",
-          "on-surface-variant": "#44474a",
-          "surface-container": "#e6e3da"
-        },
-        "fontFamily": {
-          "body-lg": ["Inter"],
-          "label-md": ["JetBrains Mono"],
-          "headline-md": ["Chivo"],
-          "body-md": ["Inter"],
-          "headline-lg": ["Chivo"],
-          "display-lg": ["Chivo"]
-        }
-      }
-    }
-  }
-</script>
-<style>
-  /* Discrete, modern scrollbar system */
-  html {
-      scrollbar-width: thin;
-      scrollbar-color: rgba(212, 175, 55, 0.4) transparent;
-  }
-  ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-  }
-  ::-webkit-scrollbar-track {
-      background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-      background: rgba(197, 198, 202, 0.5);
-      border-radius: 9999px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-      background: rgba(212, 175, 55, 0.8);
-  }
-
-  @keyframes carouselPeekHint {
-    0%, 100% { transform: translateX(0); }
-    30% { transform: translateX(-12px); }
-    60% { transform: translateX(4px); }
-  }
-  .animate-peek-hint {
-    animation: carouselPeekHint 2.5s ease-in-out infinite;
-  }
-</style>
+<link rel="stylesheet" href="css/styles.css" />
 
 <script type="application/ld+json">
 {
@@ -93,9 +32,17 @@
       "email": "William@aventodrones.co.uk",
       "priceRange": "£100 - £200+",
       "description": "Professional CAA certified UAV drone photography and 4K aerial cinematography services across the UK for commercial real estate, infrastructure, and roof surveys.",
+      "sameAs": [
+        "https://instagram.com/aventodrones"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.4808,
+        "longitude": -2.2426
       },
       "areaServed": [
         "United Kingdom",
