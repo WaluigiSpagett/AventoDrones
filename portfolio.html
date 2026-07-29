@@ -371,6 +371,10 @@
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-black uppercase" href="index.html#services">SERVICES</a>
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-black uppercase" href="index.html#about">ABOUT</a>
     <a class="font-label-md text-label-md text-on-surface-variant hover:text-black uppercase" href="index.html#contact">CONTACT</a>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-black uppercase" href="https://instagram.com/aventodrones" target="_blank">INSTAGRAM</a>
+    <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase cursor-pointer">PRIVACY POLICY</button>
+    <button onclick="document.getElementById('cookie-modal').classList.remove('hidden')" class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase cursor-pointer">COOKIE POLICY</button>
+    <button onclick="document.getElementById('terms-modal').classList.remove('hidden')" class="font-label-md text-label-md text-on-surface-variant hover:text-black transition-colors duration-300 uppercase cursor-pointer">TERMS & CONTRACT</button>
   </nav>
   <div class="text-center w-full pt-8 border-t border-outline-variant">
     <p class="font-label-md text-label-md text-on-surface-variant uppercase">© 2026 AVENTO DRONES. ALL RIGHTS RESERVED.</p>
@@ -428,10 +432,10 @@
 </script>
 
 <!-- UK GDPR Privacy Policy Modal -->
-<div id="privacy-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+<div id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
   <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
-    <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer">&times;</button>
-    <h3 class="font-headline-lg text-2xl text-on-surface mb-4">UK GDPR Privacy Notice</h3>
+    <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" aria-label="Close privacy notice">&times;</button>
+    <h3 id="privacy-modal-title" class="font-headline-lg text-2xl text-on-surface mb-4">UK GDPR Privacy Notice</h3>
     <div class="space-y-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
       <p><strong class="text-on-surface">1. Data Controller:</strong> Avento Drones (William@aventodrones.co.uk) acts as the data controller for personal details collected via this website.</p>
       <p><strong class="text-on-surface">2. Data We Collect:</strong> When you submit a booking or enquiry form, we collect your Full Name, Email Address, Phone Number, and Project Location/Details.</p>
@@ -441,6 +445,43 @@
     </div>
     <div class="mt-6 pt-4 border-t border-outline-variant text-right">
       <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="px-6 py-2.5 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors cursor-pointer">Close Notice</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie & Tracking Policy Modal -->
+<div id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="document.getElementById('cookie-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" aria-label="Close cookie policy">&times;</button>
+    <h3 id="cookie-modal-title" class="font-headline-lg text-2xl text-on-surface mb-4">Cookie & Tracking Policy</h3>
+    <div class="space-y-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+      <p><strong class="text-on-surface">1. Why No Cookie Banner?</strong> Avento Drones respects your online privacy by default. We do not display annoying cookie banners because we do not use any non-essential tracking cookies, advertising pixels, or invasive third-party analytics software on this website.</p>
+      <p><strong class="text-on-surface">2. Zero Analytics or Marketing Trackers:</strong> We do not track your browsing habits across the web, profile your activity, or share your visits with ad networks or social media platforms.</p>
+      <p><strong class="text-on-surface">3. Essential Site Operation:</strong> This website is built purely as a clean, static showcase. Any session data processed during form submission (such as Web3Forms inquiry handling) is strictly used to deliver your message securely to our inbox and is never stored in tracking cookies on your device.</p>
+      <p><strong class="text-on-surface">4. External Links:</strong> If you navigate away from our website to external platforms (such as our Instagram page), those third-party services operate under their own privacy and cookie policies.</p>
+    </div>
+    <div class="mt-6 pt-4 border-t border-outline-variant text-right">
+      <button onclick="document.getElementById('cookie-modal').classList.add('hidden')" class="px-6 py-2.5 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors cursor-pointer">Close Notice</button>
+    </div>
+  </div>
+</div>
+
+<!-- Flight Contract & Terms Modal -->
+<div id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-title" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-6 md:p-8 max-w-3xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
+    <button onclick="document.getElementById('terms-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" aria-label="Close terms">&times;</button>
+    <h3 id="terms-modal-title" class="font-headline-lg text-2xl text-on-surface mb-2">Flight Service Terms & Conditions</h3>
+    <p class="font-body-md text-xs text-on-surface-variant mb-6">Standard Drone Operations Agreement — Avento Drones (Subject to client review)</p>
+    <div class="space-y-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
+      <p><strong class="text-on-surface">1. CAA Regulatory Compliance & Pilot Authority:</strong> All commercial UAV flights are operated in strict compliance with Civil Aviation Authority (CAA) regulations under GVC / A2 CoC remote pilot qualifications. The remote pilot in command retains final and absolute authority to postpone, pause, or alter any flight mission if airspace hazards, weather conditions, or safety risks arise.</p>
+      <p><strong class="text-on-surface">2. Weather Policy & Rescheduling:</strong> Drone flight operations are strictly weather-dependent. Rain, heavy precipitation, freezing temperatures, or wind speeds exceeding equipment safety thresholds will prevent flight. If a shoot is postponed due to adverse weather, Avento Drones will reschedule the flight to the next mutually available clear date at no additional fee.</p>
+      <p><strong class="text-on-surface">3. Landowner Permissions & Site Access:</strong> The client is responsible for securing all necessary landowner permissions and site access rights for the agreed flight location prior to the scheduled shoot date. Avento Drones will conduct pre-flight airspace assessments and notify the client of any restricted airspace clearance requirements.</p>
+      <p><strong class="text-on-surface">4. Public Liability Insurance:</strong> Avento Drones maintains £1,000,000 (£1M) Public Liability Insurance coverage specifically tailored for UAV commercial flight operations in accordance with UK aviation regulations (EU 785/2004).</p>
+      <p><strong class="text-on-surface">5. Copyright & Deliverable Licensing:</strong> Under UK copyright law, Avento Drones retains statutory copyright for all captured RAW imagery and video media. Upon receipt of full invoice payment, the client is granted a perpetual, non-exclusive license to use, reproduce, and publish the media for their business marketing, portfolio, website, and social media channels. Avento Drones reserves the right to use media for self-promotional purposes unless a Non-Disclosure Agreement (NDA) is executed prior to the flight.</p>
+      <p><strong class="text-on-surface">6. Deliverables & Payment Terms:</strong> High-resolution media files are delivered digitally (via cloud download link) within 48 hours of shoot completion. Standard payment terms are 14 days from the date of invoice issuance.</p>
+    </div>
+    <div class="mt-6 pt-4 border-t border-outline-variant text-right">
+      <button onclick="document.getElementById('terms-modal').classList.add('hidden')" class="px-6 py-2.5 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded hover:bg-on-surface hover:text-surface-container-lowest transition-colors cursor-pointer">Close Contract Terms</button>
     </div>
   </div>
 </div>
