@@ -38,7 +38,7 @@ module.exports = {
         "surface-container-highest": "#e2e2e2",
         "on-error-container": "#93000a",
         "secondary-fixed-dim": "#e9c349",
-        "on-surface-variant": "#44474a",
+        "on-surface-variant": "#3a3d40",
         "on-tertiary": "#ffffff",
         "surface-container-high": "#e8e8e8",
         "surface-tint": "#5d5e61",

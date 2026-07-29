@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="en-GB" href="https://aventodrones.co.uk/portfolio.html">
 <title>Portfolio & Project Showcase | Avento Drones</title>
 <meta name="description" content="Explore Avento Drones aerial portfolio featuring commercial infrastructure, luxury real estate showcases, residential surveys, and 4K cinematography." />
 <meta property="og:title" content="Portfolio Showcase | Avento Drones" />
 <meta property="og:description" content="View high-resolution UAV aerial photography and cinematography project archives." />
 <link rel="canonical" href="https://aventodrones.co.uk/portfolio.html" />
 <meta property="og:image" content="https://aventodrones.co.uk/images/projects/industrial-facility/photo-1.webp" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio & Project Showcase | Avento Drones">
+<meta name="twitter:image" content="https://aventodrones.co.uk/images/projects/industrial-facility/photo-1.webp">
 <link rel="icon" type="image/png" href="images/favicon.png" /><link rel="shortcut icon" href="images/favicon.ico" />
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -27,7 +32,7 @@
       "@id": "https://aventodrones.co.uk/#organization",
       "name": "Avento Drones",
       "url": "https://aventodrones.co.uk",
-      "logo": "https://aventodrones.co.uk/images/square logo real.png",
+      "logo": "https://aventodrones.co.uk/images/logo.webp",
       "image": "https://aventodrones.co.uk/images/hero-bg.webp",
       "email": "William@aventodrones.co.uk",
       "priceRange": "£100 - £200+",
@@ -126,6 +131,7 @@
 
 </head>
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary selection:text-on-secondary relative overflow-x-hidden">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-secondary focus:text-on-secondary focus:rounded">Skip to main content</a>
 
 <!-- Navigation Header -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-white/20 hover:border-outline-variant/30 group bg-transparent [&.scrolled]:bg-white/95 [&.scrolled]:backdrop-blur-md [&.scrolled]:border-outline-variant/30 [&.scrolled]:shadow-sm h-14 md:h-20">
@@ -133,7 +139,7 @@
 <!-- Brand Cell -->
 <a class="flex items-center gap-4 px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 transition-colors duration-300 relative overflow-hidden group/cell h-full" href="index.html">
   <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
-  <img alt="Avento Drones Logo" class="h-7 w-7 md:h-10 md:w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity relative z-10" src="images/square logo real.png"/>
+  <img alt="Avento Drones Logo" class="h-7 w-7 md:h-10 md:w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity relative z-10" src="images/logo.webp" width="40" height="40"/>
   <span class="font-medium md:font-headline-md text-sm md:text-headline-md tracking-widest uppercase relative z-10 transition-colors duration-300 text-surface-container-lowest group-[.scrolled]:text-black group-hover/cell:!text-black group-[.scrolled]:group-hover/cell:!text-black">AVENTO DRONES</span>
 </a>
 <!-- Navigation Links & Trailing Action (Desktop Grid) -->
@@ -167,7 +173,7 @@
   </a>
 </div>
 <!-- Mobile Hamburger Button -->
-<button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-surface-container-lowest hover:text-black group-[.scrolled]:text-black group-[.scrolled]:hover:text-black transition-colors duration-300 px-6 flex items-center h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30 focus:outline-none">
+<button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-surface-container-lowest hover:text-black group-[.scrolled]:text-black group-[.scrolled]:hover:text-black transition-colors duration-300 px-6 flex items-center h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
   <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
@@ -179,7 +185,7 @@
   <div>
     <div class="flex items-center justify-between p-6 border-b border-white/10">
       <div class="flex items-center gap-3">
-        <img alt="Avento Drones Logo" class="h-8 w-8 object-contain" src="images/square logo real.png"/>
+        <img alt="Avento Drones Logo" class="h-8 w-8 object-contain" src="images/logo.webp" width="40" height="40"/>
         <span class="font-headline-md text-lg tracking-widest text-surface-container-lowest uppercase">AVENTO</span>
       </div>
       <button id="mobile-menu-close" class="text-surface-variant hover:text-black p-2"><span class="material-symbols-outlined text-2xl">close</span></button>
@@ -196,9 +202,9 @@
   </div>
 </aside>
 
-<main class="flex-grow">
+<main id="main-content" class="flex-grow">
 <!-- Portfolio Hero Banner -->
-<section class="relative h-[55vh] w-full flex items-center justify-center overflow-hidden mb-16 rounded-b-3xl">
+<section class="relative h-[45vh] md:h-[55vh] w-full flex items-center justify-center overflow-hidden mb-8 md:mb-16">
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-primary/60 z-10 mix-blend-multiply"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary/80 z-10"></div>
@@ -218,17 +224,17 @@
 <!-- Discovery Grid Section with Filter Tabs -->
 <section class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto pb-16 md:pb-32">
   <!-- Category Filter Controls -->
-  <div class="flex flex-wrap items-center justify-center gap-3 mb-16">
-    <button data-filter="all" class="filter-btn active px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-secondary text-on-secondary shadow-md cursor-pointer">
+  <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-8 md:mb-16">
+    <button data-filter="all" class="filter-btn active px-4 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-full font-label-md text-xs md:text-label-md uppercase tracking-wider transition-all duration-300 bg-secondary text-on-secondary shadow-md cursor-pointer">
       All Showcase Missions
     </button>
-    <button data-filter="commercial" class="filter-btn px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-black cursor-pointer">
+    <button data-filter="commercial" class="filter-btn px-4 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-full font-label-md text-xs md:text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-black cursor-pointer">
       Commercial Facilities
     </button>
-    <button data-filter="real-estate" class="filter-btn px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-black cursor-pointer">
+    <button data-filter="real-estate" class="filter-btn px-4 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-full font-label-md text-xs md:text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-black cursor-pointer">
       Luxury Property
     </button>
-    <button data-filter="survey" class="filter-btn px-6 py-3 rounded-full font-label-md text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-black cursor-pointer">
+    <button data-filter="survey" class="filter-btn px-4 py-2.5 md:px-6 md:py-3 rounded-lg md:rounded-full font-label-md text-xs md:text-label-md uppercase tracking-wider transition-all duration-300 bg-surface-container-low text-on-surface border border-outline-variant hover:border-secondary hover:text-black cursor-pointer">
       Residential Survey
     </button>
   </div>
@@ -237,9 +243,9 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-grid">
     
     <!-- Project 1: Industrial Manufacturing Site -->
-    <a href="projects/industrial-facility.html" data-category="commercial" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
+    <a href="projects/industrial-facility.html" data-category="commercial" class="project-card group bg-surface-container-low border border-outline-variant rounded-xl md:rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Industrial Manufacturing Site Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp"/>
+        <img alt="Industrial Manufacturing Site Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
@@ -262,9 +268,9 @@
     </a>
 
     <!-- Project 2: Private Residential Home -->
-    <a href="projects/private-estate.html" data-category="real-estate" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
+    <a href="projects/private-estate.html" data-category="real-estate" class="project-card group bg-surface-container-low border border-outline-variant rounded-xl md:rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Private Residential Home Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp"/>
+        <img alt="Private Residential Home Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">PROPERTY</span>
@@ -275,7 +281,7 @@
           <h3 class="font-headline-md text-2xl text-surface-container-lowest">Private Residential Home</h3>
         </div>
       </div>
-      <div class="p-8 flex flex-col justify-between flex-grow">
+      <div class="p-5 md:p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">Cinematic residential estate showcase highlighting property boundaries, manicured grounds, and architectural roof design.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">RESIDENTIAL PROPERTY</span>
@@ -287,9 +293,9 @@
     </a>
 
     <!-- Project 3: Commercial Production Facility -->
-    <a href="projects/industrial-facility.html" data-category="commercial" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
+    <a href="projects/industrial-facility.html" data-category="commercial" class="project-card group bg-surface-container-low border border-outline-variant rounded-xl md:rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Commercial Production Facility Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp"/>
+        <img alt="Commercial Production Facility Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
@@ -300,7 +306,7 @@
           <h3 class="font-headline-md text-2xl text-surface-container-lowest">Commercial Production Facility</h3>
         </div>
       </div>
-      <div class="p-8 flex flex-col justify-between flex-grow">
+      <div class="p-5 md:p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">Ultra-stabilized 4K photography and branded media package created for commercial property branding and marketing.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">COMMERCIAL MEDIA</span>
@@ -312,9 +318,9 @@
     </a>
 
     <!-- Project 4: Educational & Public Sector Facility -->
-    <a href="projects/residential-development.html" data-category="survey real-estate" class="project-card group bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
+    <a href="projects/residential-development.html" data-category="survey real-estate" class="project-card group bg-surface-container-low border border-outline-variant rounded-xl md:rounded-2xl overflow-hidden hover:border-secondary transition-all duration-500 flex flex-col justify-between cursor-pointer block w-full">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Educational & Public Sector Facility View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp"/>
+        <img alt="Educational & Public Sector Facility View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
         <div class="absolute top-6 left-6 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">SURVEY</span>
@@ -325,7 +331,7 @@
           <h3 class="font-headline-md text-2xl text-surface-container-lowest">Educational & Public Sector Facility</h3>
         </div>
       </div>
-      <div class="p-8 flex flex-col justify-between flex-grow">
+      <div class="p-5 md:p-8 flex flex-col justify-between flex-grow">
         <p class="font-body-md text-on-surface-variant mb-6">High-altitude aerial photography, roof inspection, and structural site survey for a public sector educational facility.</p>
         <div class="pt-6 border-t border-outline-variant/60 flex items-center justify-between">
           <span class="font-label-md text-xs text-on-surface-variant uppercase">PROPERTY MAPPING</span>
@@ -358,7 +364,7 @@
 <footer class="w-full py-margin-desktop bg-surface-container border-t border-outline-variant">
 <div class="flex flex-col items-center gap-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
   <div class="mb-8 opacity-80 hover:opacity-100 transition-opacity duration-300 text-center">
-    <img alt="Avento Drones Logo" loading="lazy" class="h-16 w-16 object-contain mb-4 mx-auto" src="images/square logo real.png"/>
+    <img alt="Avento Drones Logo" loading="lazy" class="h-16 w-16 object-contain mb-4 mx-auto" src="images/logo.webp" width="64" height="64"/>
     <span class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest">AVENTO DRONES</span>
   </div>
   <nav class="flex flex-wrap justify-center gap-8 mb-12">

@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="en-GB" href="https://aventodrones.co.uk/">
 <title>Avento Drones | Aerial Cinematography & UAV Photography UK</title>
 <meta name="description" content="Professional CAA certified drone photography and 4K aerial cinematography services across the UK for real estate, commercial infrastructure, and site inspections." />
 <meta property="og:title" content="Avento Drones | Aerial Cinematography & UAV Photography" />
@@ -10,7 +12,12 @@
 <link rel="canonical" href="https://aventodrones.co.uk/" />
 <meta property="og:image" content="https://aventodrones.co.uk/images/hero-bg.webp" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://aventodrones.co.uk/" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Avento Drones | Aerial Cinematography & UAV Photography UK">
+<meta name="twitter:image" content="https://aventodrones.co.uk/images/hero-bg.webp">
 <link rel="icon" type="image/png" href="images/favicon.png" /><link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="preload" as="image" href="images/hero-bg.webp">
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +35,7 @@
       "@id": "https://aventodrones.co.uk/#organization",
       "name": "Avento Drones",
       "url": "https://aventodrones.co.uk",
-      "logo": "https://aventodrones.co.uk/images/square logo real.png",
+      "logo": "https://aventodrones.co.uk/images/logo.webp",
       "image": "https://aventodrones.co.uk/images/hero-bg.webp",
       "email": "William@aventodrones.co.uk",
       "priceRange": "£100 - £200+",
@@ -127,6 +134,7 @@
 
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary selection:text-on-secondary relative overflow-x-hidden">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-secondary focus:text-on-secondary focus:rounded">Skip to main content</a>
 
 <!-- TopNavBar Component -->
 <header class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-white/20 hover:border-outline-variant/30 group bg-transparent [&.scrolled]:bg-white/95 [&.scrolled]:backdrop-blur-md [&.scrolled]:border-outline-variant/30 [&.scrolled]:shadow-sm h-14 md:h-20">
@@ -134,7 +142,7 @@
 <!-- Brand Cell -->
 <a class="flex items-center gap-4 px-6 border-r border-white/20 group-[.scrolled]:border-outline-variant/30 transition-colors duration-300 relative overflow-hidden group/cell h-full" href="index.html">
   <div class="absolute top-0 left-0 w-full h-0 bg-white group-[.scrolled]:bg-surface-container-low group-hover/cell:h-full transition-all duration-300 ease-in-out z-0"></div>
-  <img alt="Avento Drones Logo" class="h-7 w-7 md:h-10 md:w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity relative z-10" src="images/square logo real.png"/>
+  <img alt="Avento Drones Logo" class="h-7 w-7 md:h-10 md:w-10 object-contain opacity-90 group-hover/brand:opacity-100 transition-opacity relative z-10" src="images/logo.webp" width="40" height="40"/>
   <span class="font-medium md:font-headline-md text-sm md:text-headline-md tracking-widest uppercase relative z-10 transition-colors duration-300 text-surface-container-lowest group-[.scrolled]:text-black group-hover/cell:!text-black group-[.scrolled]:group-hover/cell:!text-black">AVENTO DRONES</span>
 </a>
 <!-- Navigation Links & Trailing Action (Desktop Grid) -->
@@ -168,7 +176,7 @@
   </a>
 </div>
 <!-- Mobile Hamburger Button -->
-<button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-surface-container-lowest hover:text-black group-[.scrolled]:text-black group-[.scrolled]:hover:text-black transition-colors duration-300 px-6 flex items-center h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30 focus:outline-none">
+<button id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-surface-container-lowest hover:text-black group-[.scrolled]:text-black group-[.scrolled]:hover:text-black transition-colors duration-300 px-6 flex items-center h-full border-l border-white/20 group-[.scrolled]:border-outline-variant/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
   <span class="material-symbols-outlined text-3xl">menu</span>
 </button>
 </div>
@@ -180,10 +188,10 @@
   <div>
     <div class="flex items-center justify-between p-6 border-b border-white/10">
       <div class="flex items-center gap-3">
-        <img alt="Avento Drones Logo" class="h-8 w-8 object-contain" src="images/square logo real.png"/>
+        <img alt="Avento Drones Logo" class="h-8 w-8 object-contain" src="images/logo.webp" width="32" height="32"/>
         <span class="font-headline-md text-lg tracking-widest text-surface-container-lowest uppercase">AVENTO</span>
       </div>
-      <button id="mobile-menu-close" aria-label="Close menu" class="text-surface-variant hover:text-black p-2 transition-colors focus:outline-none">
+      <button id="mobile-menu-close" aria-label="Close menu" class="text-surface-variant hover:text-black p-3 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
         <span class="material-symbols-outlined text-2xl">close</span>
       </button>
     </div>
@@ -201,13 +209,13 @@
   </div>
 </aside>
 
-<main>
+<main id="main-content">
 <!-- Hero Section -->
 <section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0 image-glow">
 <div class="absolute inset-0 bg-primary/40 z-10 mix-blend-multiply"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-primary/60 z-10"></div>
-<img alt="Hero background aerial landscape" class="w-full h-full object-cover object-center" src="images/hero-bg.webp"/>
+<img alt="Hero background aerial landscape" class="w-full h-full object-cover object-center" src="images/hero-bg.webp" width="1920" height="1080"/>
 </div>
 <div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mt-24">
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-container-lowest mb-6 tracking-tight">
@@ -215,7 +223,7 @@
 <span class="text-secondary-fixed italic font-light">another angle</span>
 </h1>
 <p class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto mb-10 tracking-wide">
-                    Professional CAA Certified UAV Photography &amp; 4K Aerial Cinematography.
+                    Professional CAA Certified UAV Photography & 4K Aerial Cinematography. Based in Manchester, serving the UK.
 </p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
 <a class="px-8 py-4 bg-secondary text-on-secondary font-label-md text-label-md uppercase rounded hover:bg-surface-container-lowest hover:text-on-surface transition-colors duration-300 w-full sm:w-auto text-center" href="portfolio.html">
@@ -248,7 +256,7 @@
     <!-- Card 1 -->
     <a href="projects/industrial-facility.html" class="min-w-[78vw] max-w-[78vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Industrial Manufacturing Site Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp"/>
+        <img alt="Industrial Manufacturing Site Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/industrial-facility/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
         <div class="absolute top-4 left-4 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
@@ -272,7 +280,7 @@
     <!-- Card 2 -->
     <a href="projects/private-estate.html" class="min-w-[78vw] max-w-[78vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Private Residential Home Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp"/>
+        <img alt="Private Residential Home Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/private-estate/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
         <div class="absolute top-4 left-4 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">PROPERTY</span>
@@ -296,7 +304,7 @@
     <!-- Card 3 -->
     <a href="projects/architectural-plant.html" class="min-w-[78vw] max-w-[78vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Commercial Production Facility Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp"/>
+        <img alt="Commercial Production Facility Aerial View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/architectural-plant/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
         <div class="absolute top-4 left-4 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">COMMERCIAL</span>
@@ -320,7 +328,7 @@
     <!-- Card 4 -->
     <a href="projects/residential-development.html" class="min-w-[78vw] max-w-[78vw] snap-center shrink-0 md:min-w-0 md:max-w-none md:shrink block group rounded-2xl overflow-hidden border border-outline-variant hover:border-secondary transition-all cursor-pointer bg-surface-container-low flex flex-col justify-between">
       <div class="relative w-full aspect-[16/10] overflow-hidden bg-primary/10">
-        <img alt="Educational & Public Sector Facility View" loading=lazy class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp"/>
+        <img alt="Educational & Public Sector Facility View" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projects/residential-development/photo-1.webp" width="800" height="500"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
         <div class="absolute top-4 left-4 flex items-center gap-2">
           <span class="px-3 py-1 bg-secondary text-on-secondary font-label-md text-xs uppercase rounded font-medium">SURVEY</span>
@@ -483,12 +491,12 @@
 <section class="relative w-full py-16 md:py-28 px-margin-mobile md:px-margin-desktop overflow-hidden border-t border-outline-variant">
   <!-- Backdrop background with high transparency sand wash -->
   <div class="absolute inset-0 z-0">
-    <img alt="Standard inclusions backdrop" loading="lazy" class="w-full h-full object-cover object-center z-0" src="images/pricing-included-bg.webp"/>
+    <img alt="Standard inclusions backdrop" loading="lazy" class="w-full h-full object-cover object-center z-0" src="images/pricing-included-bg.webp" width="1920" height="600"/>
     <div class="absolute inset-0 bg-[#f3f2ed]/70 backdrop-blur-[1px] z-10"></div>
   </div>
   
   <div class="relative z-20 max-w-[1440px] mx-auto">
-    <h3 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-12 text-center tracking-tight">Standard Inclusions</h3>
+    <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-12 text-center tracking-tight">Standard Inclusions</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
       
       <!-- Inclusion 1 -->
@@ -554,7 +562,7 @@
     </div>
   </div>
   <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-outline-variant">
-    <img alt="Drone Operator Equipment View" loading="lazy" class="w-full h-[350px] md:h-[500px] object-cover" src="images/about-bg.webp" />
+    <img alt="Drone Operator Equipment View" loading="lazy" class="w-full h-[350px] md:h-[500px] object-cover" src="images/about-bg.webp" width="800" height="500" />
     <div class="absolute inset-0 bg-primary/20 backdrop-brightness-90"></div>
     <div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-xl text-surface-container-lowest">
       <div class="flex items-center gap-3">
@@ -594,22 +602,22 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
         <label for="name" class="block font-label-md text-label-md text-on-surface uppercase mb-2">Full Name *</label>
-        <input type="text" id="name" name="name" required placeholder="e.g. John Smith" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus:border-secondary text-on-surface font-body-md transition-colors" />
+        <input type="text" id="name" name="name" required placeholder="e.g. John Smith" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus:border-secondary text-on-surface font-body-md transition-colors" />
       </div>
       <div>
         <label for="email" class="block font-label-md text-label-md text-on-surface uppercase mb-2">Email Address *</label>
-        <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus:border-secondary text-on-surface font-body-md transition-colors" />
+        <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus:border-secondary text-on-surface font-body-md transition-colors" />
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
         <label for="phone" class="block font-label-md text-label-md text-on-surface uppercase mb-2">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="+44 7000 000000" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus:border-secondary text-on-surface font-body-md transition-colors" />
+        <input type="tel" id="phone" name="phone" placeholder="+44 7000 000000" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus:border-secondary text-on-surface font-body-md transition-colors" />
       </div>
       <div>
         <label for="service" class="block font-label-md text-label-md text-on-surface uppercase mb-2">Service Package *</label>
-        <select id="service" name="service" required class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus:border-secondary text-on-surface font-body-md transition-colors">
+        <select id="service" name="service" required class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus:border-secondary text-on-surface font-body-md transition-colors">
           <option value="" disabled selected>Select a package...</option>
           <option value="Photography">Aerial Photography (From £100)</option>
           <option value="Cinematography">Cinematography & 4K Video (From £150)</option>
@@ -622,12 +630,17 @@
 
     <div>
       <label for="location" class="block font-label-md text-label-md text-on-surface uppercase mb-2">Flight Location / Postcode *</label>
-      <input type="text" id="location" name="location" required placeholder="e.g. Manchester, M1 1AG or Site Postcode" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus:border-secondary text-on-surface font-body-md transition-colors" />
+      <input type="text" id="location" name="location" required placeholder="e.g. Manchester, M1 1AG or Site Postcode" class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus:border-secondary text-on-surface font-body-md transition-colors" />
     </div>
 
     <div>
       <label for="message" class="block font-label-md text-label-md text-on-surface uppercase mb-2">Project Details & Date Requirements *</label>
-      <textarea id="message" name="message" rows="4" required placeholder="Please describe your project, specific angles required, or ideal dates..." class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus:border-secondary text-on-surface font-body-md transition-colors"></textarea>
+      <textarea id="message" name="message" rows="4" required placeholder="Please describe your project, specific angles required, or ideal dates..." class="w-full px-4 py-3 bg-surface border border-outline-variant rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus:border-secondary text-on-surface font-body-md transition-colors"></textarea>
+    </div>
+
+    <!-- Honeypot field for spam protection -->
+    <div class="hidden" aria-hidden="true">
+      <input type="text" name="botcheck" tabindex="-1" autocomplete="off" />
     </div>
 
     <div class="text-center pt-4">
@@ -635,7 +648,7 @@
         SEND INQUIRY
       </button>
       <p class="font-body-md text-xs text-on-surface-variant/80 mt-3 text-center max-w-lg mx-auto leading-relaxed">
-        🔒 <span class="font-semibold">UK GDPR Notice:</span> Personal details submitted via this form are processed securely via Web3Forms solely to respond to your enquiry and provide flight estimates. We never sell or share your data.
+        <span class="font-semibold">UK GDPR Notice:</span> Personal details submitted via this form are processed securely via Web3Forms solely to respond to your enquiry and provide flight estimates. We never sell or share your data.
       </p>
     </div>
   </form>
@@ -644,6 +657,10 @@
     <div class="flex items-center gap-3">
       <span class="material-symbols-outlined text-secondary text-2xl">mail</span>
       <span class="font-body-md text-on-surface-variant">Direct Email: <a href="mailto:William@aventodrones.co.uk" class="text-on-surface font-semibold hover:text-black">William@aventodrones.co.uk</a></span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-secondary text-2xl">phone</span>
+      <span class="font-body-md text-on-surface-variant">Call Us: <a href="tel:+447000000000" class="text-on-surface font-semibold hover:text-black">+44 7000 000 000</a></span>
     </div>
     <div class="flex items-center gap-3">
       <span class="material-symbols-outlined text-secondary text-2xl">photo_camera</span>
@@ -694,7 +711,7 @@
 <footer class="w-full py-margin-desktop bg-surface-container border-t border-outline-variant">
 <div class="flex flex-col items-center gap-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
 <div class="mb-8 opacity-80 hover:opacity-100 transition-opacity duration-300 text-center">
-<img alt="Avento Drones Logo" loading="lazy" class="h-16 w-16 object-contain mb-4 mx-auto" src="images/square logo real.png"/>
+<img alt="Avento Drones Logo" loading="lazy" class="h-16 w-16 object-contain mb-4 mx-auto" src="images/logo.webp" width="64" height="64"/>
 <span class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest">AVENTO DRONES</span>
 </div>
 <nav class="flex flex-wrap justify-center gap-8 mb-12">
@@ -806,10 +823,10 @@
 </script>
 
 <!-- UK GDPR Privacy Policy Modal -->
-<div id="privacy-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+<div id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
   <div class="bg-surface-container-low border border-outline-variant rounded-2xl p-6 md:p-8 max-w-2xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto">
-    <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer">&times;</button>
-    <h3 class="font-headline-lg text-2xl text-on-surface mb-4">UK GDPR Privacy Notice</h3>
+    <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-on-surface-variant hover:text-on-surface text-2xl font-bold cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2" aria-label="Close privacy notice">&times;</button>
+    <h3 id="privacy-modal-title" class="font-headline-lg text-2xl text-on-surface mb-4">UK GDPR Privacy Notice</h3>
     <div class="space-y-4 font-body-md text-sm text-on-surface-variant leading-relaxed">
       <p><strong class="text-on-surface">1. Data Controller:</strong> Avento Drones (William@aventodrones.co.uk) acts as the data controller for personal details collected via this website.</p>
       <p><strong class="text-on-surface">2. Data We Collect:</strong> When you submit a booking or enquiry form, we collect your Full Name, Email Address, Phone Number, and Project Location/Details.</p>
